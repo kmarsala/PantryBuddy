@@ -30,6 +30,9 @@
             android:label="@string/title_activity_main" >
         </activity>
         <activity
+            android:name="com.google.android.gms.samples.vision.ocrreader.SettingsActivity"
+            android:label="Settings" />
+        <activity
             android:name="com.google.android.gms.samples.vision.ocrreader.OcrCaptureActivity"
             android:label="Read Text" />
         <activity

@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="pref_example_list_titles">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
     <attr format="boolean" name="isLightTheme"/>
@@ -350,6 +360,20 @@
     <string name="ocr_success">Text read successfully</string>
     <string name="ok">OK</string>
     <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
+    <string name="pref_gps_notifications"> Enable push notifications for gps alerts.
+    </string>
+    <string name="pref_header_general">General</string>
+    <string name="pref_header_notifications">Notifications</string>
+    <string name="pref_pantry_notifications"> Enable push notifications for pantry alerts.
+    </string>
+    <string name="pref_ringtone_silent">Silent</string>
+    <string name="pref_title_change_text_size">Change text size</string>
+    <string name="pref_title_gps_notifications">GPS alerts</string>
+    <string name="pref_title_pantry_notifications">Pantry reminders</string>
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_title_tutorial">Restart tutorial</string>
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="pref_tutorial">Filler Text</string>
     <string name="read_text">Detect Text</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
