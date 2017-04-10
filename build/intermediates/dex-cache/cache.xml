@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_939a7776c2de875a728d32d0c1de38a8c4b835bb.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.0_a390be0507817400839ef1d2c225728a096a626e.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.2.0_b0ea52fe806fdaaa96a062a9a29f2333aeab3882.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_4bdead66c5c2d8b36f105b0f59526f7ca01a799d.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.0_737d6bb598e832316e932f4948b21eee974c4994.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_7707cc4ab0797847cbd7d3a5e63dfee433a1eb58.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.0_b082c4f1034dd1c35cb76b655252909de6c108ff.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="618485fef3ebe12127f7622abbc9b5b39057b5c2">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-9.4.0_7e235687fb194537ccbbeba166b156cdd1e66fdb.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.0_a4266dc6d626b38fdd5aa4c0bb63d6291911a580.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.0_c8727081b35aa512254e75f66c5640393dafc2e9.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_5d655e51b876c61d0e06fc89464b6a24ac17b344.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_baca0a925d57f6ae7c481d5c8ef8c511370af08e.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.0_c1788b19f2c6413d429b8a4848c59d794e19561d.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\9.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="670df81539ab71918d49b186598b7eff08ef6563">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-vision-9.4.0_8b9723a9de11295e5c7434687fb3509badcc2b60.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3dee4ce5844d39d843d503fb8fe04e51e5bfffac">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-9.4.0_a8664d0a4ce464df3f4d6b4c7058e500b6fc3ff1.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.0\support-annotations-24.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.0_0f4a6e9619f8997ee1af1bb46d5b232bfdcd169f.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-9.4.0_2c0f68e870ab433e67e828d59f092597a51fea8a.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.0_5bbd619c6c17a115ef5a790b1bf99f99a529e087.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.0_be137caaf5c6239d68ec3667770c0a9641b6701e.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\design\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="23eb0d2998a782213b56168cbf23a0688b9111d9">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.2.0_63550adf4e77ddd92bcaceeddf65b9e134ce074f.jar" />
+    </item>
+    <item
+        jar="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.0_3f6a0e1598fa5bf98b2275cc7a6636882707c7b6.jar" />
+    </item>
+
+</items>
