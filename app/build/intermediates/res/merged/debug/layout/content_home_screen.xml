@@ -14,47 +14,6 @@
     tools:showIn="@layout/activity_home_screen">
 
     <Button
-        android:text="Add To List"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="23dp"
-        android:id="@+id/button_inputList"
-        android:layout_alignParentEnd="true"
-        android:onClick="inputList"/>
-
-    <Button
-        android:text="View Your Pantry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button_inputList"
-        android:layout_marginTop="36dp"
-        android:id="@+id/button_viewList"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:onClick = "viewList"/>
-
-    <Button
-        android:text="View Your Shopping List"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:id="@+id/button_viewShoppingList"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:text="View Trends"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button_viewShoppingList"
-        android:layout_marginTop="30dp"
-        android:id="@+id/button_trends"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="viewTrends"/>
-
-    <Button
         android:text="Settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,15 +27,67 @@
         android:layout_alignParentEnd="true" />
 
     <Button
+        android:text="View Your Shopping List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_viewShoppingList"
+        android:layout_below="@+id/button_viewList"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="27dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
         android:text="Scan A Receipt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button_settings"
         android:id="@+id/button_reciept"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+        android:onClick="scanReceipt"
+        android:layout_below="@+id/button_trends"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="scanReceipt" />
+        android:layout_marginTop="23dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Add To List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:id="@+id/button_inputList"
+        android:onClick="inputList"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="View Trends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:id="@+id/button_trends"
+        android:onClick="viewTrends"
+        android:layout_below="@+id/button_viewShoppingList"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="View Your Pantry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:id="@+id/button_viewList"
+        android:onClick = "viewList"
+        android:layout_below="@+id/button_inputList"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
