@@ -10,6 +10,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class ViewLoadPantry extends ListActivity {
@@ -17,6 +19,7 @@ public class ViewLoadPantry extends ListActivity {
     ArrayList<FoodItem> foods;
 
     String[] allFoods = new String[0];
+
 
     public void makeArray()
     {
@@ -30,10 +33,14 @@ public class ViewLoadPantry extends ListActivity {
             dbHandler.updateItem(foods.get(i));
         }
 */
+        //allFoods[0] = "Item Name / Quantity / Date Purchased / Price Paid";
         for(int i = 0; i < foods.size(); i++)
         {
-            System.out.println(foods.get(i).getItemName());
-            String temp = foods.get(i).getItemName() + "/" + Double.valueOf(foods.get(i).getAmount()).toString() + "/" + foods.get(i).getDatePurchased() + "/" + foods.get(i).getNewMillis();
+
+           System.out.println(foods.get(i).getItemName());
+            System.out.println("printing price");
+            System.out.println(foods.get(i).getPrice());
+            String temp = foods.get(i).getItemName() + "/" + Double.valueOf(foods.get(i).getAmount()).toString() + " Remain / Bought on " + foods.get(i).getDatePurchased() + " / You Paid: $" + foods.get(i).getPrice();
             String[] newArray = new String[allFoods.length+1];
             System.arraycopy(allFoods,0,newArray,0,allFoods.length);
             allFoods = newArray;
@@ -44,22 +51,23 @@ public class ViewLoadPantry extends ListActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
+                super.onCreate(savedInstanceState);
 
         makeArray();
 
-        System.out.println("debug1");
+     //   System.out.println("debug1");
         // no more this
         // setContentView(R.layout.list_fruit);
 
         setListAdapter(new ArrayAdapter<String>(this, R.layout.list_fruit,allFoods));
-        System.out.println("debug2");
+     //   System.out.println("debug2");
 
         ListView listView = getListView();
-        System.out.println("debug3");
+       // System.out.println("debug3");
 
         listView.setTextFilterEnabled(true);
-        System.out.println("debug4");
+        //System.out.println("debug4");
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,

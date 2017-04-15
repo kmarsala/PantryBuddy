@@ -138,7 +138,7 @@ MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Do
 MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
 	android:label
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:15:9-36
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:15:9-37
 	android:supportsRtl
 		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:16:9-37
 	android:hardwareAccelerated
@@ -150,7 +150,7 @@ MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Do
 	android:icon
 		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:14:9-38
 	android:theme
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:17:9-47
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:17:9-53
 meta-data#com.google.android.gms.vision.DEPENDENCIES
 ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:18:9-20:35
 	android:value

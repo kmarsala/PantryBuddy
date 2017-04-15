@@ -27,14 +27,19 @@ import java.util.ArrayList;
 
 public class DisplayMessageActivity extends AppCompatActivity {
 
-    EditText mEdit;
-    EditText mEdit2;
-    EditText mEdit3;
-    EditText mEdit4;
+    EditText name1;
+    EditText name2;
+    EditText name3;
+    EditText name4;
     EditText number1;
     EditText number2;
     EditText number3;
     EditText number4;
+    EditText price1;
+    EditText price2;
+    EditText price3;
+    EditText price4;
+    TextView label;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -52,45 +57,70 @@ public class DisplayMessageActivity extends AppCompatActivity {
         TextView textView = new TextView(this);
         textView.setTextSize(40);
 
-        mEdit = (EditText) findViewById(R.id.edit_text_item1);
-        mEdit2 = (EditText) findViewById(R.id.edit_text_item2);
-        mEdit3 = (EditText) findViewById(R.id.edit_text_item3);
-        mEdit4 = (EditText) findViewById(R.id.edit_text_item4);
-        number1 = (EditText) findViewById(R.id.itemQty1);
-        number2 = (EditText) findViewById(R.id.itemQty2);
-        number3 = (EditText) findViewById(R.id.itemQty3);
-        number4 = (EditText) findViewById(R.id.itemQty4);
+        name1 = (EditText) findViewById(R.id.item1);
+        name2 = (EditText) findViewById(R.id.item2);
+        name3 = (EditText) findViewById(R.id.item3);
+        name4 = (EditText) findViewById(R.id.item4);
+        number1 = (EditText) findViewById(R.id.qty1);
+        number2 = (EditText) findViewById(R.id.qty2);
+        number3 = (EditText) findViewById(R.id.qty3);
+        number4 = (EditText) findViewById(R.id.qty4);
+        price1 = (EditText) findViewById(R.id.price1);
+        price2 = (EditText) findViewById(R.id.price2);
+        price3= (EditText) findViewById(R.id.price3);
+        price4 = (EditText) findViewById(R.id.price4);
+        label = (TextView) findViewById(R.id.labelText);
+
 
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display_message);
         layout.addView(textView);
 
     }
 
-    public void addLineToDB(EditText name, EditText number)
+    public void addLineToDB(EditText name, EditText number, EditText price)
     {
         //TODO: Remove special characters. Probably use regex.
         DatabaseHandler dbHandler = new DatabaseHandler(this);
 
-        if(!name.getText().toString().equals("") && !number.getText().toString().equals(""))
+        if(!name.getText().toString().equals("") && !number.getText().toString().equals("") && !price.getText().toString().equals(""))
         {
             FoodItem f1 = new FoodItem();
             f1.setItemName(name.getText().toString());
             f1.setAmount((Double.valueOf(number.getText().toString())));
+            System.out.println("Displaying price purchased");
+            System.out.println(Double.valueOf(price.getText().toString()));
+            f1.setPrice(Double.valueOf(price.getText().toString()));
           //  f1.setDatePurchased();
             dbHandler.addFood(f1);
+            label.setText("Items successfully added");
+
         }
+
     }
 
     public void submitList(View v) {
 
 
-            addLineToDB(mEdit, number1);
+        addLineToDB(name1, number1, price1);
+        name1.setText("");
+        number1.setText("");
+        price1.setText("");
 
-            addLineToDB(mEdit2, number2);
+        addLineToDB(name2, number2, price2);
+        name2.setText("");
+        number2.setText("");
+        price2.setText("");
 
-            addLineToDB(mEdit3, number3);
+        addLineToDB(name3, number3, price3);
+        name3.setText("");
+        number3.setText("");
+        price3.setText("");
 
-            addLineToDB(mEdit4, number4);
+        addLineToDB(name4, number4, price4);
+        name4.setText("");
+        number4.setText("");
+        price4.setText("");
+
 
     }
 
@@ -102,6 +132,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
         {
             dbHandler.deleteContact(foods.get(i));
         }
+        label.setText("Pantry has been deleted");
     }
 
     /*public void addDays(View v)

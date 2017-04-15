@@ -92,6 +92,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             long oldMilliseconds = tempFood.getNewMillis();
             values.put(KEY_ITEM_MILLIS_OLD, oldMilliseconds);
             values.put(KEY_ITEM_MILLIS_NEW,milliSecondsCurrent);
+            values.put(KEY_ITEM_PRICE,foodItem.getPrice());
             // Inserting Row
             db.insert(PANTRY_TABLE, null, values);
             db.close(); // Closing database connection
@@ -104,6 +105,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             values.put(KEY_QUANTITY, foodItem.getAmount());
             values.put(KEY_DATE_PURCHASED, sdf.format(d.getTime())) ;
             values.put(KEY_ITEM_MILLIS_NEW,milliSecondsCurrent);
+            values.put(KEY_ITEM_PRICE,foodItem.getPrice());
             // Inserting Row
             db.insert(PANTRY_TABLE, null, values);
             db.close(); // Closing database connection
@@ -160,14 +162,19 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
+        System.out.println("Inside the getallfoods");
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
             do {
                 FoodItem f1 = new FoodItem();
                 f1.setID(Integer.parseInt(cursor.getString(0)));
+
                 f1.setItemName(cursor.getString(1));
                 f1.setAmount(Double.valueOf(cursor.getString(2)));
+
                 f1.setDatePurchased(cursor.getString(3));
+
+                f1.setPrice(Double.valueOf(cursor.getString(7)));
 
 //                f1.setPrice(Double.valueOf(cursor.getString(7)));
 

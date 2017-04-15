@@ -14,19 +14,6 @@
     tools:showIn="@layout/activity_home_screen">
 
     <Button
-        android:text="Settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_settings"
-        android:onClick="viewSettings"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="25dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
         android:text="View Your Shopping List"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,6 +74,19 @@
         android:layout_below="@+id/button_inputList"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_settings"
+        android:onClick="viewSettings"
+        android:layout_below="@+id/button_reciept"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 

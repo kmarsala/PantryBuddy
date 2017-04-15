@@ -13,31 +13,26 @@
     tools:context="com.google.android.gms.samples.vision.ocrreader.ViewPantry"
     tools:showIn="@layout/activity_view_pantry">
 
-    <Button
-        android:text="Load Pantry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/button_load"
-        android:onClick="loadPantry" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button_load"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="34dp"
-        android:id="@+id/textView2"
-        android:layout_toStartOf="@+id/button_load"
-        tools:text="Item Name                       Amount"
-        android:layout_alignParentEnd="true" />
-
-    <ListView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentStart="true" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Item Name / Quantity / Date Purchased"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView2"
+            android:layout_toStartOf="@+id/button_load"
+            tools:text="Item Name                       Amount"
+            android:layout_alignParentEnd="true" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true" />
+
+    </LinearLayout>
 
 </RelativeLayout>
