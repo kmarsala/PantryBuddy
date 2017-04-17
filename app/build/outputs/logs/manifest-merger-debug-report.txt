@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:2:1-62:12
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:2:1-70:12
 	package
 		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:3:5-62
 		INJECTED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml
@@ -15,215 +15,8 @@ ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main
 		INJECTED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml
 	android:installLocation
 		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:4:5-35
-uses-feature#android.hardware.camera
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:6:5-60
-	android:name
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:6:19-57
-uses-permission#android.permission.CAMERA
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:8:5-65
-	android:name
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:8:22-62
-application
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:10:5-60:19
-MERGED from [com.android.support:support-v4:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\9.4.0\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:19:5-23:19
-MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
-MERGED from [com.android.support:support-v4:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
-MERGED from [com.android.support:support-v4:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
-MERGED from [com.android.support:support-v4:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:design:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\design\24.2.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v4:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v4:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
-	android:label
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:15:9-37
-	android:supportsRtl
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:16:9-37
-	android:hardwareAccelerated
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:13:9-43
-	android:fullBackupContent
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:12:9-42
-	android:allowBackup
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:11:9-35
-	android:icon
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:14:9-38
-	android:theme
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:17:9-53
-meta-data#com.google.android.gms.vision.DEPENDENCIES
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:18:9-20:35
-	android:value
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:20:13-32
-	android:name
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:19:13-70
-activity#com.google.android.gms.samples.vision.ocrreader.MainActivity
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:22:9-27:20
-	android:label
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:24:13-56
-	android:name
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:23:13-88
-activity#com.google.android.gms.samples.vision.ocrreader.SettingsActivity
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:28:9-29:49
-	android:label
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:29:13-37
-	android:name
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:28:19-51
-activity#com.google.android.gms.samples.vision.ocrreader.OcrCaptureActivity
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:31:9-32:41
-	android:label
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:32:13-38
-	android:name
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:31:19-100
-activity#com.google.android.gms.samples.vision.ocrreader.HomeScreen
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:34:9-43:20
-	android:label
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:36:13-46
-	android:theme
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:37:13-72
-	android:name
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:35:13-39
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:38:13-42:29
-action#android.intent.action.MAIN
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:39:17-69
-	android:name
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:39:25-66
-category#android.intent.category.LAUNCHER
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:41:17-77
-	android:name
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:41:27-74
-activity#com.google.android.gms.samples.vision.ocrreader.DisplayMessageActivity
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:44:9-60
-	android:name
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:44:19-57
-meta-data#com.google.android.gms.version
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:49:9-51:69
-MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
-	android:value
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:51:13-66
-	android:name
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:50:13-58
-activity#com.google.android.gms.samples.vision.ocrreader.ViewPantry
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:53:9-56:75
-	android:label
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:55:13-40
-	android:theme
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:56:13-72
-	android:name
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:54:13-39
-activity#com.google.android.gms.samples.vision.ocrreader.ViewLoadPantry
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:57:9-52
-	android:name
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:57:19-49
-activity#com.google.android.gms.samples.vision.ocrreader.ViewTrends
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:58:9-57
-	android:name
-		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:58:19-45
 uses-sdk
-INJECTED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:6:5-44
 MERGED from [com.android.support:support-v4:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:21:5-23:61
@@ -343,8 +136,230 @@ MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Do
 		INJECTED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:6:15-41
 		INJECTED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml
+uses-feature#android.hardware.camera
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:8:5-60
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:8:19-57
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:10:5-65
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:10:22-62
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:11:5-78
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:11:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:12:5-80
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:12:22-78
+application
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:14:5-68:19
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\9.4.0\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:design:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\design\24.2.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
+	android:label
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:19:9-37
+	android:supportsRtl
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:20:9-37
+	android:hardwareAccelerated
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:17:9-43
+	android:fullBackupContent
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:16:9-42
+	android:allowBackup
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:15:9-35
+	android:icon
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:18:9-38
+	android:theme
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:21:9-53
+meta-data#com.google.android.gms.vision.DEPENDENCIES
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:22:9-24:35
+	android:value
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:24:13-32
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:23:13-70
+activity#com.google.android.gms.samples.vision.ocrreader.MainActivity
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:26:9-31:20
+	android:label
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:28:13-56
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:27:13-88
+activity#com.google.android.gms.samples.vision.ocrreader.SettingsActivity
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:32:9-33:49
+	android:label
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:33:13-37
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:32:19-51
+activity#com.google.android.gms.samples.vision.ocrreader.OcrCaptureActivity
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:35:9-36:41
+	android:label
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:36:13-38
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:35:19-100
+activity#com.google.android.gms.samples.vision.ocrreader.HomeScreen
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:38:9-47:20
+	android:label
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:40:13-46
+	android:theme
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:41:13-72
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:39:13-39
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:42:13-46:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:43:17-69
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:43:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:45:17-77
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:45:27-74
+activity#com.google.android.gms.samples.vision.ocrreader.DisplayMessageActivity
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:48:9-60
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:48:19-57
+meta-data#com.google.android.gms.version
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:53:9-55:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:55:13-66
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:54:13-58
+activity#com.google.android.gms.samples.vision.ocrreader.ViewPantry
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:57:9-60:75
+	android:label
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:59:13-40
+	android:theme
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:60:13-72
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:58:13-39
+activity#com.google.android.gms.samples.vision.ocrreader.ViewLoadPantry
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:61:9-52
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:61:19-49
+activity#com.google.android.gms.samples.vision.ocrreader.ViewTrends
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:62:9-57
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:62:19-45
+service#com.google.android.gms.samples.vision.ocrreader.notifications.NotificationService
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:64:9-66:39
+	android:exported
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:66:13-37
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:65:13-62
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:20:9-22:45
 	android:exported

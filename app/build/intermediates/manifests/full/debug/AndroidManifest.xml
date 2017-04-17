@@ -6,12 +6,14 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="9"
+        android:minSdkVersion="16"
         android:targetSdkVersion="23" />
 
     <uses-feature android:name="android.hardware.camera" />
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -60,6 +62,11 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name="com.google.android.gms.samples.vision.ocrreader.ViewLoadPantry" />
         <activity android:name="com.google.android.gms.samples.vision.ocrreader.ViewTrends" />
+
+        <service
+            android:name="com.google.android.gms.samples.vision.ocrreader.notifications.NotificationService"
+            android:exported="false" />
+
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

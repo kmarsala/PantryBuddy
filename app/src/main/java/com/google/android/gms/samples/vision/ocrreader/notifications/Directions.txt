@@ -1,0 +1,30 @@
+** AppPackageName probably is the same as AppName
+
+1. Place the notifications package in the main package of the new app's java folder. (java/com.AppName.user.AppPackageName)
+    When the package is added, it may automatically update the namespace of the package to the app it is added to.
+    However, if it doesn't, com.backgroundservice.mkr.backgroundservice.notifications will need to be changed to:
+        com.AppName.user.AppPackageName.notifications in all classes within the notifications package.
+
+2. Make sure the service tag is added to the new apps AndroidManifest.xml
+    <service
+        android:name=".notifications.NotificationService"
+        android:exported="false"/>
+
+3. Wherever the service is going to be turned on and off (potentially the pantry item background service for checking low items),
+    the service will need to be imported.
+        import com.AppName.user.AppPackageName.notifications.NotificationService;
+
+    Also, the state boolean of the service will need to be added, as well as the turn on and off methods.
+        private boolean notificationsOn = false;
+        private void startNotificationService()
+        private void stopNotificationService()
+
+4. The NotificationService class needs the R package imported.
+
+    import com.backgroundservice.mkr.backgroundservice.R  change to import com.AppName.user.AppPackageName.R
+
+5. Include the permissions in the AndroidActivity.xml:
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+

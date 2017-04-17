@@ -3,9 +3,13 @@
     package="com.google.android.gms.samples.vision.ocrreader"
     android:installLocation="auto" >
 
+    <uses-sdk android:minSdkVersion="16" />
+
     <uses-feature android:name="android.hardware.camera" />
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -56,6 +60,10 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".ViewLoadPantry" />
         <activity android:name=".ViewTrends"></activity>
+
+        <service
+            android:name=".notifications.NotificationService"
+            android:exported="false"/>
 
     </application>
 
