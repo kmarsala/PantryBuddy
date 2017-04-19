@@ -92,10 +92,11 @@ public class DisplayMessageActivity extends AppCompatActivity {
             f1.setPrice(Double.valueOf(price.getText().toString()));
           //  f1.setDatePurchased();
             dbHandler.addFood(f1);
+
             label.setText("Items successfully added");
 
         }
-
+       // dbHandler.close();
     }
 
     public void submitList(View v) {

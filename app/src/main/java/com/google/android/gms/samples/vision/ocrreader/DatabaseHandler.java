@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
+import android.provider.Settings;
 
 import java.sql.Date;
 import java.text.DateFormat;
@@ -64,38 +65,41 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     public void addFood(FoodItem foodItem) {
-
-
         long milliSecondsCurrent = System.currentTimeMillis();
-
         Calendar c = Calendar.getInstance();
         Date d = new Date(c.getTimeInMillis());
         SimpleDateFormat sdf = new SimpleDateFormat(("MM-dd-yyyy"));
         ContentValues values = new ContentValues();
         if(itemIsInDatabase(foodItem.getItemName())) //Old item
         {
-
             //TODO: If item is in database, construct temp foodItem object, delete row, then insert new one.
             SQLiteDatabase db = this.getWritableDatabase();
             //TODO: If item is in DB, add the quantity and such.
             System.out.println("Item exists in the DB");
-            FoodItem tempFood = getFoodItem(foodItem.getItemName()); //In theory this will have grabbed everything we need
-           System.out.println("help1");
+            FoodItem tempFood = getFoodItem(foodItem.getItemName());
+            System.out.println("help1");
             deleteContact(foodItem); //Maybe this won't break?
             System.out.println("help2");
             //This stuff below will change
             //values.put(KEY_FOOD_NAME, foodItem.getItemName()); // Food Name
             double previousQuantity = tempFood.getAmount();
+            System.out.println(previousQuantity);
             //New amount is equal to previous amount + old amount
             values.put(KEY_QUANTITY, foodItem.getAmount() + previousQuantity);
+            System.out.println("help3");
             values.put(KEY_DATE_PURCHASED, sdf.format(d.getTime()));
             long oldMilliseconds = tempFood.getNewMillis();
+            System.out.println("help4");
             values.put(KEY_ITEM_MILLIS_OLD, oldMilliseconds);
+            System.out.println("help5");
             values.put(KEY_ITEM_MILLIS_NEW,milliSecondsCurrent);
+            System.out.println("help6");
             values.put(KEY_ITEM_PRICE,foodItem.getPrice());
+            System.out.println("help7");
             // Inserting Row
             db.insert(PANTRY_TABLE, null, values);
-            db.close(); // Closing database connection
+            System.out.println("help8");
+           // db.close(); // Closing database connection
         }
         else if(!itemIsInDatabase(foodItem.getItemName())) //New item
         {
@@ -108,8 +112,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             values.put(KEY_ITEM_PRICE,foodItem.getPrice());
             // Inserting Row
             db.insert(PANTRY_TABLE, null, values);
-            db.close(); // Closing database connection
+            //db.close(); // Closing database connection
         }
+
 
 
     }
@@ -121,17 +126,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         cursor= db.rawQuery(sql,null);
         if(cursor.getCount()>0){
             cursor.close();
-            db.close();
+           // db.close();
             return true;
         }else{
             cursor.close();
-            db.close();
+          //  db.close();
             return false;
         }
     }
 
     //Todo: Fix this.
     public FoodItem getFoodItem(String fieldValue) {
+
         System.out.println("fieldValue is: " + fieldValue);
         SQLiteDatabase db = this.getReadableDatabase();
         System.out.println("dragon1");
@@ -140,17 +146,29 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 new String[] { String.valueOf(id) }, null, null, null, null);*/
         Cursor cursor = null;
         System.out.println("dragon2");
-        String sql ="SELECT " + KEY_FOOD_NAME + " FROM "+PANTRY_TABLE+" WHERE _foodName = '"+fieldValue+"' ";
+        String sql ="SELECT " + KEY_FOOD_NAME + "," + KEY_QUANTITY + "," + KEY_ITEM_MILLIS_NEW + "," + KEY_ITEM_MILLIS_OLD + "," + KEY_DATE_PURCHASED + " FROM "+PANTRY_TABLE+" WHERE _foodName = '"+fieldValue+"' ";
+        System.out.println(sql);
         System.out.println("dragon3");
         cursor= db.rawQuery(sql,null);
+        int nameIndex = cursor.getColumnIndex(KEY_FOOD_NAME);
+        int quantityIndex = cursor.getColumnIndex(KEY_QUANTITY);
+        int oldMillisIndex = cursor.getColumnIndex(KEY_ITEM_MILLIS_OLD);
+        int newMillisIndex = cursor.getColumnIndex(KEY_ITEM_MILLIS_NEW);
+        int datePurchasedIndex = cursor.getColumnIndex(KEY_DATE_PURCHASED);
+        System.out.println(quantityIndex);
         System.out.println("dragon4");
         cursor.moveToFirst();
         System.out.println("dragon5");
-        System.out.println(cursor.getString(1));
+        System.out.println(cursor.getString(nameIndex));
         System.out.println("dragon6");
-        FoodItem f1 = new FoodItem(  (cursor.getString(1)), Double.valueOf((cursor.getString(2))));
-        f1.setOldMillis(Integer.parseInt(cursor.getString(8)));
-        f1.setDatePurchased(cursor.getString(3));
+        System.out.println(cursor.getString(quantityIndex));
+        System.out.println("dragon7");
+        FoodItem f1 = new FoodItem(  (cursor.getString(nameIndex)), Double.valueOf((cursor.getString(quantityIndex))));
+        System.out.println("dragon7.5");
+        f1.setOldMillis(Double.valueOf(cursor.getString(newMillisIndex)).longValue());
+        System.out.println("dragon8");
+        f1.setDatePurchased(cursor.getString(datePurchasedIndex));
+        System.out.println("dragon9");
         return f1;
     }
 
@@ -231,11 +249,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
     public void deleteContact(FoodItem contact) {
-        System.out.println("debug1");
+        //System.out.println("debug1");
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(PANTRY_TABLE, KEY_FOOD_NAME + " = ?",
                 new String[] { String.valueOf(contact.getItemName()) });
-        db.close();
+       // db.close();
     }
 
 
