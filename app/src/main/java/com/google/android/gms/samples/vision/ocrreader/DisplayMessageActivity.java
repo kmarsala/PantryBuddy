@@ -84,16 +84,23 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
         if(!name.getText().toString().equals("") && !number.getText().toString().equals("") && !price.getText().toString().equals(""))
         {
-            FoodItem f1 = new FoodItem();
-            f1.setItemName(name.getText().toString());
-            f1.setAmount((Double.valueOf(number.getText().toString())));
-            System.out.println("Displaying price purchased");
-            System.out.println(Double.valueOf(price.getText().toString()));
-            f1.setPrice(Double.valueOf(price.getText().toString()));
-          //  f1.setDatePurchased();
-            dbHandler.addFood(f1);
+            if(name.getText().toString().contains("'"))
+            {
+                label.setText("Please remove the apostrophe from your item name");
+            }
+            else {
 
-            label.setText("Items successfully added");
+                FoodItem f1 = new FoodItem();
+                f1.setItemName(name.getText().toString());
+                f1.setAmount((Double.valueOf(number.getText().toString())));
+                System.out.println("Displaying price purchased");
+                System.out.println(Double.valueOf(price.getText().toString()));
+                f1.setPrice(Double.valueOf(price.getText().toString()));
+                //  f1.setDatePurchased();
+                dbHandler.addFood(f1);
+
+                label.setText("Items successfully added");
+            }
 
         }
        // dbHandler.close();
@@ -128,11 +135,14 @@ public class DisplayMessageActivity extends AppCompatActivity {
     public void deleteDB(View v)
     {
         DatabaseHandler dbHandler = new DatabaseHandler(this);
+        dbHandler.deletePantryRows();
+        /*
         ArrayList<FoodItem> foods = dbHandler.getAllFoods();
         for(int i = 0; i < foods.size(); i++)
         {
             dbHandler.deleteContact(foods.get(i));
         }
+        */
         label.setText("Pantry has been deleted");
     }
 

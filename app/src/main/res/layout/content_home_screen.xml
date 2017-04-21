@@ -14,31 +14,6 @@
     tools:showIn="@layout/activity_home_screen">
 
     <Button
-        android:text="View Your Shopping List"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_viewShoppingList"
-        android:layout_below="@+id/button_viewList"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="27dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:text="Scan A Receipt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_reciept"
-        android:onClick="scanReceipt"
-        android:layout_below="@+id/button_trends"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="23dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
         android:text="Add To List"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,15 +27,15 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:text="View Trends"
+        android:text="Settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:id="@+id/button_trends"
-        android:onClick="viewTrends"
-        android:layout_below="@+id/button_viewShoppingList"
+        android:id="@+id/button_settings"
+        android:onClick="viewSettings"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="112dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -68,26 +43,40 @@
         android:text="View Your Pantry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
         android:id="@+id/button_viewList"
         android:onClick = "viewList"
-        android:layout_below="@+id/button_inputList"
+        android:layout_above="@+id/button_settings"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_marginBottom="32dp"
+        android:layout_alignRight="@+id/button_reciept"
+        android:layout_alignEnd="@+id/button_reciept" />
 
     <Button
-        android:text="Settings"
+        android:text="Scan A Receipt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button_settings"
-        android:onClick="viewSettings"
-        android:layout_below="@+id/button_reciept"
+        android:id="@+id/button_reciept"
+        android:onClick="scanReceipt"
+        android:layout_above="@+id/button_viewList"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="11dp"
+        android:layout_marginEnd="11dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="View Trends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_trends"
+        android:onClick="viewTrends"
+        android:layout_above="@+id/button_reciept"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="19dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_marginBottom="13dp"
+        android:layout_alignRight="@+id/button_reciept"
+        android:layout_alignEnd="@+id/button_reciept" />
 
 </RelativeLayout>

@@ -21,6 +21,8 @@ import java.util.List;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
+    final int milliSecondsPerDay = 86400000;
+
     // All Static variables
     // Database Version
     private static final int DATABASE_VERSION = 11;
@@ -66,6 +68,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public void addFood(FoodItem foodItem) {
         long milliSecondsCurrent = System.currentTimeMillis();
+
         Calendar c = Calendar.getInstance();
         Date d = new Date(c.getTimeInMillis());
         SimpleDateFormat sdf = new SimpleDateFormat(("MM-dd-yyyy"));
@@ -76,29 +79,52 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             SQLiteDatabase db = this.getWritableDatabase();
             //TODO: If item is in DB, add the quantity and such.
             System.out.println("Item exists in the DB");
+
             FoodItem tempFood = getFoodItem(foodItem.getItemName());
-            System.out.println("help1");
+
+         //   System.out.println("help1");
             deleteContact(foodItem); //Maybe this won't break?
-            System.out.println("help2");
+          //  System.out.println("help2");
             //This stuff below will change
             //values.put(KEY_FOOD_NAME, foodItem.getItemName()); // Food Name
             double previousQuantity = tempFood.getAmount();
+            long oldMilliseconds = tempFood.getNewMillis();
+            double daysSincePurchase = (System.currentTimeMillis() - oldMilliseconds) / milliSecondsPerDay;
+            double usagePerDay = foodItem.getAmount() / daysSincePurchase;
+            System.out.println("Days passed: " + daysSincePurchase);
+            System.out.println("You're using: " + usagePerDay + " a day");
+            values.put(KEY_USAGE_PERDAY, usagePerDay);
+            //This next block updates the previous quantity based on the usage per day, to estimate how much is left from previous purchase.
+            double tempPreviousQuantity = (previousQuantity - (daysSincePurchase * usagePerDay));
+            if(tempPreviousQuantity <= 0)
+            {
+                System.out.println("We hit 0");
+                tempPreviousQuantity = 0;
+            }
+            previousQuantity = tempPreviousQuantity;
             System.out.println(previousQuantity);
             //New amount is equal to previous amount + old amount
+            values.put(KEY_FOOD_NAME,foodItem.getItemName());
             values.put(KEY_QUANTITY, foodItem.getAmount() + previousQuantity);
-            System.out.println("help3");
+         //   System.out.println("help3");
             values.put(KEY_DATE_PURCHASED, sdf.format(d.getTime()));
-            long oldMilliseconds = tempFood.getNewMillis();
-            System.out.println("help4");
+
+            //System.out.println("Previous purchase was at: " + oldMilliseconds);
+           // System.out.println("Current millis is: " + System.currentTimeMillis());
+
+
+           // System.out.println("This is a difference of: " + daysSincePurchase + " days");
+           // System.out.println("help4");
             values.put(KEY_ITEM_MILLIS_OLD, oldMilliseconds);
-            System.out.println("help5");
-            values.put(KEY_ITEM_MILLIS_NEW,milliSecondsCurrent);
-            System.out.println("help6");
+           // System.out.println("help5");
+
+            values.put(KEY_ITEM_MILLIS_NEW,System.currentTimeMillis());
+           // System.out.println("help6");
             values.put(KEY_ITEM_PRICE,foodItem.getPrice());
-            System.out.println("help7");
+            //System.out.println("help7");
             // Inserting Row
             db.insert(PANTRY_TABLE, null, values);
-            System.out.println("help8");
+         //   System.out.println("help8");
            // db.close(); // Closing database connection
         }
         else if(!itemIsInDatabase(foodItem.getItemName())) //New item
@@ -108,7 +134,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             values.put(KEY_FOOD_NAME, foodItem.getItemName()); // Food Name
             values.put(KEY_QUANTITY, foodItem.getAmount());
             values.put(KEY_DATE_PURCHASED, sdf.format(d.getTime())) ;
+            milliSecondsCurrent = System.currentTimeMillis();
             values.put(KEY_ITEM_MILLIS_NEW,milliSecondsCurrent);
+        //    System.out.println("Item Millis New = " + milliSecondsCurrent);
             values.put(KEY_ITEM_PRICE,foodItem.getPrice());
             // Inserting Row
             db.insert(PANTRY_TABLE, null, values);
@@ -138,17 +166,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     //Todo: Fix this.
     public FoodItem getFoodItem(String fieldValue) {
 
-        System.out.println("fieldValue is: " + fieldValue);
+     //   System.out.println("fieldValue is: " + fieldValue);
         SQLiteDatabase db = this.getReadableDatabase();
-        System.out.println("dragon1");
+      //  System.out.println("dragon1");
       /*  Cursor cursor = db.query(PANTRY_TABLE, new String[] { KEY_ID,
                         KEY_FOOD_NAME, KEY_QUANTITY }, KEY_ID + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);*/
         Cursor cursor = null;
-        System.out.println("dragon2");
+       // System.out.println("dragon2");
         String sql ="SELECT " + KEY_FOOD_NAME + "," + KEY_QUANTITY + "," + KEY_ITEM_MILLIS_NEW + "," + KEY_ITEM_MILLIS_OLD + "," + KEY_DATE_PURCHASED + " FROM "+PANTRY_TABLE+" WHERE _foodName = '"+fieldValue+"' ";
-        System.out.println(sql);
-        System.out.println("dragon3");
+        //System.out.println(sql);
+        //System.out.println("dragon3");
         cursor= db.rawQuery(sql,null);
         int nameIndex = cursor.getColumnIndex(KEY_FOOD_NAME);
         int quantityIndex = cursor.getColumnIndex(KEY_QUANTITY);
@@ -156,19 +184,19 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         int newMillisIndex = cursor.getColumnIndex(KEY_ITEM_MILLIS_NEW);
         int datePurchasedIndex = cursor.getColumnIndex(KEY_DATE_PURCHASED);
         System.out.println(quantityIndex);
-        System.out.println("dragon4");
+        //System.out.println("dragon4");
         cursor.moveToFirst();
-        System.out.println("dragon5");
+        //System.out.println("dragon5");
         System.out.println(cursor.getString(nameIndex));
-        System.out.println("dragon6");
+        //System.out.println("dragon6");
         System.out.println(cursor.getString(quantityIndex));
-        System.out.println("dragon7");
+        //System.out.println("dragon7");
         FoodItem f1 = new FoodItem(  (cursor.getString(nameIndex)), Double.valueOf((cursor.getString(quantityIndex))));
-        System.out.println("dragon7.5");
-        f1.setOldMillis(Double.valueOf(cursor.getString(newMillisIndex)).longValue());
-        System.out.println("dragon8");
+        //System.out.println("dragon7.5");
+        f1.setNewMillis(Double.valueOf(cursor.getString(newMillisIndex)).longValue());
+        //System.out.println("dragon8");
         f1.setDatePurchased(cursor.getString(datePurchasedIndex));
-        System.out.println("dragon9");
+        //System.out.println("dragon9");
         return f1;
     }
 
@@ -180,7 +208,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
-        System.out.println("Inside the getallfoods");
+       // System.out.println("Inside the getallfoods");
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
             do {
@@ -193,8 +221,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 f1.setDatePurchased(cursor.getString(3));
 
                 f1.setPrice(Double.valueOf(cursor.getString(7)));
-
-//                f1.setPrice(Double.valueOf(cursor.getString(7)));
 
                 foodList.add(f1);
             } while (cursor.moveToNext());
@@ -256,6 +282,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
        // db.close();
     }
 
+    public void deletePantryRows()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(PANTRY_TABLE,null,null);
+
+    }
 
 
 

@@ -48,6 +48,8 @@ public class HomeScreen extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }*/
 
+
+
     public void inputList(View view)
     {
         Intent intent = new Intent(this, DisplayMessageActivity.class);

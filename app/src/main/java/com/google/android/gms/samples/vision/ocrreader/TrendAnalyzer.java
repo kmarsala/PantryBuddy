@@ -3,6 +3,7 @@ package com.google.android.gms.samples.vision.ocrreader;
 import java.util.*;
 
 public class TrendAnalyzer {
+    final int milliSecondsPerDay = 86400000;
 
     static ArrayList<FoodItem> listOfFood = new ArrayList<FoodItem>();
 
