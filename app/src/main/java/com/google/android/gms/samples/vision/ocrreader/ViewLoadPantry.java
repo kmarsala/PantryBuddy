@@ -23,7 +23,9 @@ public class ViewLoadPantry extends ListActivity {
 
     public void makeArray()
     {
+        System.out.println("makearray1");
         DatabaseHandler dbHandler = new DatabaseHandler(this);
+        System.out.println("makearray2");
         foods = dbHandler.getAllFoods();
 
         System.out.println("entering for loop");
@@ -51,20 +53,20 @@ public class ViewLoadPantry extends ListActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
+    System.out.println("wtf1");
                 super.onCreate(savedInstanceState);
-
+    System.out.println("wtf2");
         makeArray();
 
-     //   System.out.println("debug1");
+        System.out.println("debug1");
         // no more this
         // setContentView(R.layout.list_fruit);
 
         setListAdapter(new ArrayAdapter<String>(this, R.layout.list_fruit,allFoods));
-     //   System.out.println("debug2");
+        System.out.println("debug2");
 
         ListView listView = getListView();
-       // System.out.println("debug3");
+        System.out.println("debug3");
 
         listView.setTextFilterEnabled(true);
         //System.out.println("debug4");

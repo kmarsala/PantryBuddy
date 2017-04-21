@@ -25,7 +25,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 11;
+    private static final int DATABASE_VERSION = 12;
 
     // Database Name
     private static final String DATABASE_NAME = "FoodStorageDB3";
@@ -44,6 +44,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_ITEM_PRICE = "_itemPrice"; //7
     private static final String KEY_ITEM_MILLIS_OLD = "_itemMillisOld"; //8
     private static final String KEY_ITEM_MILLIS_NEW = "_itemMillisNew"; //9
+    private static final String KEY_WEEKLY_SPENDING = "_weeklySpending"; //10
 
 
     public DatabaseHandler(Context context) {
@@ -53,7 +54,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Creating Tables
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + PANTRY_TABLE + "("+ KEY_ID + " INTEGER PRIMARY KEY," + KEY_FOOD_NAME + " TEXT,"+ KEY_QUANTITY + " REAL," + KEY_DATE_PURCHASED + " TEXT," + KEY_DAYS_LEFT + " INTEGER," + KEY_USAGE_PERDAY + " REAL,"+ KEY_DAYS_ELAPSED + " TEXT," + KEY_ITEM_PRICE + " REAL," + KEY_ITEM_MILLIS_OLD + " REAL," + KEY_ITEM_MILLIS_NEW + " REAL " + ")";
+        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + PANTRY_TABLE + "("+ KEY_ID + " INTEGER PRIMARY KEY," + KEY_FOOD_NAME + " TEXT,"+ KEY_QUANTITY + " REAL," + KEY_DATE_PURCHASED + " TEXT," + KEY_DAYS_LEFT + " INTEGER," + KEY_USAGE_PERDAY + " REAL,"+ KEY_DAYS_ELAPSED + " TEXT," + KEY_ITEM_PRICE + " REAL," + KEY_ITEM_MILLIS_OLD + " REAL," + KEY_ITEM_MILLIS_NEW + " REAL," + KEY_WEEKLY_SPENDING + " REAL " + ")";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
 
@@ -66,6 +67,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+
+    //Warning to all who dare enter this method
+    //Your sanity will be lost. You will curse my name for writing such awful code.\
+    //Apologies in advance to anyone who decides to edit this in the future.
     public void addFood(FoodItem foodItem) {
         long milliSecondsCurrent = System.currentTimeMillis();
 
@@ -93,37 +98,55 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             double usagePerDay = foodItem.getAmount() / daysSincePurchase;
             System.out.println("Days passed: " + daysSincePurchase);
             System.out.println("You're using: " + usagePerDay + " a day");
-            values.put(KEY_USAGE_PERDAY, usagePerDay);
-            //This next block updates the previous quantity based on the usage per day, to estimate how much is left from previous purchase.
-            double tempPreviousQuantity = (previousQuantity - (daysSincePurchase * usagePerDay));
-            if(tempPreviousQuantity <= 0)
+            if(daysSincePurchase < 1) //If it has only been 1 day, don't calculate usage per day or else it becomes infinity.
             {
-                System.out.println("We hit 0");
-                tempPreviousQuantity = 0;
+                values.put(KEY_FOOD_NAME,foodItem.getItemName());
+                values.put(KEY_QUANTITY, foodItem.getAmount() + previousQuantity);
+                values.put(KEY_DATE_PURCHASED, sdf.format(d.getTime()));
+                values.put(KEY_ITEM_MILLIS_OLD, oldMilliseconds);
+                values.put(KEY_ITEM_MILLIS_NEW,System.currentTimeMillis());
+                values.put(KEY_ITEM_PRICE,foodItem.getPrice());
+                db.insert(PANTRY_TABLE, null, values);
             }
-            previousQuantity = tempPreviousQuantity;
-            System.out.println(previousQuantity);
-            //New amount is equal to previous amount + old amount
-            values.put(KEY_FOOD_NAME,foodItem.getItemName());
-            values.put(KEY_QUANTITY, foodItem.getAmount() + previousQuantity);
-         //   System.out.println("help3");
-            values.put(KEY_DATE_PURCHASED, sdf.format(d.getTime()));
+            else {
 
-            //System.out.println("Previous purchase was at: " + oldMilliseconds);
-           // System.out.println("Current millis is: " + System.currentTimeMillis());
+                values.put(KEY_USAGE_PERDAY, usagePerDay);
+                //This next block updates the previous quantity based on the usage per day, to estimate how much is left from previous purchase.
+                double tempPreviousQuantity = (previousQuantity - (daysSincePurchase * usagePerDay));
+                if (tempPreviousQuantity <= 0) {
+                    System.out.println("We hit 0");
+                    tempPreviousQuantity = 0;
+                }
+                previousQuantity = tempPreviousQuantity;
+                System.out.println(previousQuantity);
+                //New amount is equal to previous amount + old amount
+                values.put(KEY_FOOD_NAME, foodItem.getItemName());
+                values.put(KEY_QUANTITY, foodItem.getAmount() + previousQuantity);
+                //   System.out.println("help3");
+                values.put(KEY_DATE_PURCHASED, sdf.format(d.getTime()));
+
+                //System.out.println("Previous purchase was at: " + oldMilliseconds);
+                // System.out.println("Current millis is: " + System.currentTimeMillis());
 
 
-           // System.out.println("This is a difference of: " + daysSincePurchase + " days");
-           // System.out.println("help4");
-            values.put(KEY_ITEM_MILLIS_OLD, oldMilliseconds);
-           // System.out.println("help5");
+                // System.out.println("This is a difference of: " + daysSincePurchase + " days");
+                // System.out.println("help4");
+                values.put(KEY_ITEM_MILLIS_OLD, oldMilliseconds);
+                // System.out.println("help5");
 
-            values.put(KEY_ITEM_MILLIS_NEW,System.currentTimeMillis());
-           // System.out.println("help6");
-            values.put(KEY_ITEM_PRICE,foodItem.getPrice());
-            //System.out.println("help7");
-            // Inserting Row
-            db.insert(PANTRY_TABLE, null, values);
+                values.put(KEY_ITEM_MILLIS_NEW, System.currentTimeMillis());
+                // System.out.println("help6");
+                values.put(KEY_ITEM_PRICE, foodItem.getPrice());
+
+                //Weekly spending calculation done here
+                double weeklySpending = ((foodItem.getPrice() / foodItem.getAmount()) * usagePerDay * 7);
+                //We get the money they spent, divided by the amount to get a base price, then extrapolate that amilliSecondsPerDay * 7cross 7 days.
+                System.out.println("Weekly spending estimate is: " + weeklySpending);
+                values.put(KEY_WEEKLY_SPENDING, weeklySpending);
+                //System.out.println("help7");
+                // Inserting Row
+                db.insert(PANTRY_TABLE, null, values);
+            }
          //   System.out.println("help8");
            // db.close(); // Closing database connection
         }
@@ -163,7 +186,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
     }
 
-    //Todo: Fix this.
     public FoodItem getFoodItem(String fieldValue) {
 
      //   System.out.println("fieldValue is: " + fieldValue);
@@ -174,7 +196,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 new String[] { String.valueOf(id) }, null, null, null, null);*/
         Cursor cursor = null;
        // System.out.println("dragon2");
-        String sql ="SELECT " + KEY_FOOD_NAME + "," + KEY_QUANTITY + "," + KEY_ITEM_MILLIS_NEW + "," + KEY_ITEM_MILLIS_OLD + "," + KEY_DATE_PURCHASED + " FROM "+PANTRY_TABLE+" WHERE _foodName = '"+fieldValue+"' ";
+        String sql ="SELECT " + KEY_FOOD_NAME + "," + KEY_QUANTITY + "," + KEY_ITEM_MILLIS_NEW + "," + KEY_ITEM_MILLIS_OLD + "," + KEY_DATE_PURCHASED + "," + KEY_WEEKLY_SPENDING + "," + KEY_USAGE_PERDAY + " FROM "+PANTRY_TABLE+" WHERE _foodName = '"+fieldValue+"' ";
         //System.out.println(sql);
         //System.out.println("dragon3");
         cursor= db.rawQuery(sql,null);
@@ -183,6 +205,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         int oldMillisIndex = cursor.getColumnIndex(KEY_ITEM_MILLIS_OLD);
         int newMillisIndex = cursor.getColumnIndex(KEY_ITEM_MILLIS_NEW);
         int datePurchasedIndex = cursor.getColumnIndex(KEY_DATE_PURCHASED);
+        int weeklySpendingIndex = cursor.getColumnIndex(KEY_WEEKLY_SPENDING);
+        int usagePerDayIndex = cursor.getColumnIndex(KEY_USAGE_PERDAY);
         System.out.println(quantityIndex);
         //System.out.println("dragon4");
         cursor.moveToFirst();
@@ -196,6 +220,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         f1.setNewMillis(Double.valueOf(cursor.getString(newMillisIndex)).longValue());
         //System.out.println("dragon8");
         f1.setDatePurchased(cursor.getString(datePurchasedIndex));
+       // f1.setUsagePerDay(Double.valueOf(cursor.getString(usagePerDayIndex)));
+       // f1.setWeeklySpending(Double.valueOf(cursor.getString(weeklySpendingIndex)));
         //System.out.println("dragon9");
         return f1;
     }
@@ -208,12 +234,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
-       // System.out.println("Inside the getallfoods");
+       System.out.println("Inside the getallfoods");
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
             do {
                 FoodItem f1 = new FoodItem();
-                f1.setID(Integer.parseInt(cursor.getString(0)));
+                //f1.setID(Integer.parseInt(cursor.getString(0)));
+
 
                 f1.setItemName(cursor.getString(1));
                 f1.setAmount(Double.valueOf(cursor.getString(2)));
@@ -221,11 +248,21 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 f1.setDatePurchased(cursor.getString(3));
 
                 f1.setPrice(Double.valueOf(cursor.getString(7)));
+                System.out.println("getallfoods1");
+                System.out.println(cursor.getString(10));
+                if(cursor.getString(10) != null) {
+
+                    f1.setWeeklySpending(Double.valueOf(cursor.getString(10)));
+                }
+                if(cursor.getString(5) != null) {
+                    f1.setUsagePerDay(Double.valueOf(cursor.getString(5)));
+                }
 
                 foodList.add(f1);
             } while (cursor.moveToNext());
         }
 
+        System.out.println("leaving getallfoods");
         // return contact list
         return foodList;
     }

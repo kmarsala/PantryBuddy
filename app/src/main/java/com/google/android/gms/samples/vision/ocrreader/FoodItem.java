@@ -20,6 +20,7 @@ public class FoodItem {
     private double price;
     private long oldMillis;
     private long newMillis;
+    private double weeklySpending;
 
     public FoodItem()
     {
@@ -149,6 +150,21 @@ public class FoodItem {
     public double getUsagePerDay()
     {
         return usagePerDay;
+    }
+
+    public void setUsagePerDay(double usage)
+    {
+        usagePerDay = usage;
+    }
+
+    public double getWeeklySpending()
+    {
+        return weeklySpending;
+    }
+
+    public void setWeeklySpending(double weekly)
+    {
+        weeklySpending = weekly;
     }
 
     private void calculateDaysSincePurchased()
