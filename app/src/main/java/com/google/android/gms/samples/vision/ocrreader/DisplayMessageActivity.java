@@ -146,15 +146,11 @@ public class DisplayMessageActivity extends AppCompatActivity {
         label.setText("Pantry has been deleted");
     }
 
-    /*public void addDays(View v)
+    public void recalcValues(View v)
     {
         DatabaseHandler dbHandler = new DatabaseHandler(this);
-        ArrayList<FoodItem> foods = dbHandler.getAllFoods();
-        for(int i = 0; i < foods.size(); i++)
-        {
-
-        }
-    }*/
+        dbHandler.recalcFoodAmounts();
+    }
 
 
 }

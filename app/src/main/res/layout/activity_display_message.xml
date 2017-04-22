@@ -201,4 +201,16 @@
         android:layout_marginBottom="46dp"
         android:id="@+id/labelText" />
 
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/labelText"
+        android:layout_toLeftOf="@+id/labelText"
+        android:layout_toStartOf="@+id/labelText"
+        android:layout_marginRight="22dp"
+        android:layout_marginEnd="22dp"
+        android:id="@+id/button_dev_test"
+        android:onClick="recalcValues" />
+
 </RelativeLayout>
