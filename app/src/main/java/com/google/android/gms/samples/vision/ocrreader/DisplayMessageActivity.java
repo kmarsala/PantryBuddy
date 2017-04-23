@@ -150,6 +150,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
     {
         DatabaseHandler dbHandler = new DatabaseHandler(this);
         dbHandler.recalcFoodAmounts();
+
     }
 
 

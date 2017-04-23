@@ -7,12 +7,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
 import android.provider.Settings;
 
+import com.google.android.gms.samples.vision.ocrreader.notifications.NotificationService;
+
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import android.support.v4.app.NotificationCompat;
+
 
 
 /**
@@ -249,7 +253,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
-       System.out.println("Inside the getallfoods");
+    //   System.out.println("Inside the getallfoods");
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
             do {
@@ -263,7 +267,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 f1.setDatePurchased(cursor.getString(3));
 
                 f1.setPrice(Double.valueOf(cursor.getString(7)));
-                System.out.println("getallfoods1");
+          //      System.out.println("getallfoods1");
                 System.out.println(cursor.getString(10));
                 if(cursor.getString(10) != null) {
 
@@ -285,7 +289,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
 
-        System.out.println("leaving getallfoods");
+       // System.out.println("leaving getallfoods");
         // return contact list
         return foodList;
     }
@@ -344,6 +348,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
                 double daysSinceBought = (currentMillis - newMillis) / milliSecondsPerDay;
                 double newAmount = (oldAmount - (usagePerDay * daysSinceBought));
+                if(newAmount <= 0)
+                    newAmount = 0;
 
                 deleteContact(foodList.get(i));
 
@@ -360,10 +366,29 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
     }
 
-    public void checkAmountsAndSendNotification()
+    public boolean checkAmountsAndSendNotification()
     {
+        System.out.println("checking amounts");
+        NotificationService notif = new NotificationService();
+        ArrayList<FoodItem> foodList = getAllFoods();
+        for(int i = 0; i < foodList.size(); i++)
+        {
+            System.out.println("Amount: " + foodList.get(i).getAmount());
+            System.out.println("UsagePerDay * 2 " + foodList.get(i).getUsagePerDay() * 2);
+            if(foodList.get(i).getAmount() < (foodList.get(i).getUsagePerDay() * 2) ) //If there is less than 2 days worth of food
+            {
+                //Send notification
+                System.out.println("Notification sending now");
+                //notif.notifyMe(true, "low food");
+                return true;
+            }
+        }
+        return false;
         //Loop through all foods in the DB. If: amount  - (usagePerDay*2) < 2, send notification to user
     }
+
+
+
 
 
 
