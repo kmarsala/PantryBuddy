@@ -53,30 +53,29 @@
         android:layout_alignEnd="@+id/button_reciept" />
 
     <Button
-        android:text="Scan A Receipt (Beta)"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_reciept"
-        android:onClick="scanReceipt"
-        android:layout_above="@+id/button_viewList"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="11dp"
-        android:layout_marginEnd="11dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
         android:text="View Trends"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_trends"
         android:onClick="viewTrends"
-        android:layout_above="@+id/button_reciept"
+        android:layout_below="@+id/button_inputList"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="13dp"
-        android:layout_alignRight="@+id/button_reciept"
-        android:layout_alignEnd="@+id/button_reciept" />
+        android:layout_marginTop="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Scan A Receipt (Beta)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_reciept"
+        android:onClick="scanReceipt"
+        android:layout_below="@+id/button_trends"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

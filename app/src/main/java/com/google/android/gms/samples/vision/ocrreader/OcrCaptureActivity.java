@@ -314,9 +314,28 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         }
     }
 
-    public static boolean isNumeric(String str)
+    //match a number with optional '-' and decimal.
+    private static boolean isNumeric(String str)
     {
-        return str.matches("-?\\d+(\\.\\d+)?");  //match a number with optional '-' and decimal.
+        return str.matches("-?\\d+(\\.\\d+)?");
+    }
+
+    //regex to check if the string does not contain special characters.
+    private static boolean noSpecial(String str)
+    {
+        return str.matches("[a-zA-Z0-9 ]*");
+    }
+
+    /*This class checks to see if the string contains any garbage text that we do not want in the
+    * final database; because of this, the string may be very long.*/
+    private boolean invalidString(String str)
+    {
+        String[] notGood = {"promotion", "savings", "save", "@", "lb", "/lb", "\\lb"};
+        boolean rVal = false;
+        for (int i = 0; i < notGood.length; i ++)
+            if (str.toLowerCase().equals(notGood[i]))
+                rVal = true;
+        return rVal;
     }
     /**
      * onTap is called to capture the first TextBlock under the tap location and return it to
@@ -327,18 +346,19 @@ public final class OcrCaptureActivity extends AppCompatActivity {
      * @return true if the activity is ending.
      */
     private boolean onTap(float rawX, float rawY) {
-        OcrGraphic graphic = mGraphicOverlay.getGraphicAtLocation(rawX, rawY);
+        OcrGraphic graphic;
         DatabaseHandler db = new DatabaseHandler(this);
         ArrayList<String> iteName = new ArrayList<>(), itePrc = new ArrayList<>(), iteQty = new ArrayList<>();
-        int iteIndex = 0;
+        int iteIndex = 0, skipper = 0;
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
+        String rebuildItems = "";
         TextBlock text = null;
         String[] tmp_new, tmp_old = null;
-        for (int h = 0; h< height; h+=40) {
-            for (int w = 0; w< width; w += 40){
+        for (int h = 0; h< height; h+=20) {
+            for (int w = 0; w< width; w += 20){
                 graphic = mGraphicOverlay.getGraphicAtLocation(w,h);
                 //text.getValue returns a string of the block... no bueno.
                 if (graphic != null) {
@@ -346,43 +366,48 @@ public final class OcrCaptureActivity extends AppCompatActivity {
                     if (text != null && text.getValue() != null) {
                         tmp_new = textProcessor(text);
                         if(!(tmp_old == tmp_new)) {
-                            if(isNumeric(tmp_new[0])){
-                                for(int v = 0; v < tmp_new.length; v++) {
-                                    String tst = tmp_new[v].substring(0, 4);
-                                    itePrc.add(tst);
+                            for(int n = 0; n < tmp_new.length; n++){
+                                if (isNumeric(tmp_new[n])){
+                                    /*This segment checks to see what category the numbers would be
+                                    * in. Cross-checks with the next segments of the strings,
+                                    * checking for special characters or invalid string segments.*/
+                                    if(tmp_new[n+1] != null)
+                                        if(invalidString(tmp_new[n+1]))
+                                            iteQty.add(tmp_new[n]);
                                 }
-                            }
-                            else{
-                                for(int v = 0; v < tmp_new.length; v++) {
-                                    if (!(tmp_new[v].toLowerCase().contains("saved")))
-                                        if (!(tmp_new[v].toLowerCase().contains("promotion"))) {
-                                            iteName.add(tmp_new[v]);
-                                            iteQty.add("1");
-                                            iteIndex++;
-                                        }
-                                        else if (tmp_new[v].contains("@"))
-                                            if (tmp_new[v].contains("lbs")){
-                                                char[] s = tmp_new[v].toCharArray();
-                                                String s2 = "";
-                                                for(int x = 0; x < 5; x++)
-                                                    s2 = s2 + s[x];
-                                                iteQty.remove(iteIndex-1);
-                                                iteQty.add(s2);
+                                else if (noSpecial(tmp_new[n])){
+                                    /*This section checks the validity of the strings being input;
+                                    * because of how this works, we are breaking the strings all the
+                                    * way down to individual string items, then rebuilding the items
+                                    * into the database.*/
+                                    for (int m = n; m < tmp_new.length; m++)
+                                        if (!invalidString(tmp_new[m]) && tmp_new[m].length() > 1)
+                                            if(!isNumeric(tmp_new[m]) && noSpecial(tmp_new[m])) {
+                                                rebuildItems = "" + rebuildItems + tmp_new[m];
+                                                skipper = m;
                                             }
-                                            else{
-                                                char c = tmp_new[v].charAt(0);
-                                                iteQty.remove(iteIndex-1);
-                                                iteQty.add(Character.toString(c));
-                                            }
+                                            else
+                                            if(!invalidString(tmp_new[m]))
+                                                iteQty.add("1.0");
+                                            else
+                                                m = tmp_new.length;
+                                    n += skipper;
                                 }
-
+                                else{
+                                    /*This segment deals with miscellaneous items, such as pricing*/
+                                    if (isNumeric(tmp_new[n].substring(0,4)))
+                                        if(tmp_new[n].toLowerCase().contains("t") || tmp_new[n].toLowerCase().contains("f"))
+                                            itePrc.add(tmp_new[n].substring(0,4));
+                                        else if(tmp_new[n].toLowerCase().contains("lb"))
+                                            iteQty.add(tmp_new[n].substring(0,4));
+                                }
                             }
                             tmp_old = tmp_new;
                         }
-                        Intent data = new Intent();
+                        /*Intent data = new Intent();
                         data.putExtra(TextBlockObject, text.getValue());
                         setResult(CommonStatusCodes.SUCCESS, data);
-                        finish();
+                        finish();*/
                     } else {
                         Log.d(TAG, "Processing... (Null data point)");
                     }
@@ -394,24 +419,24 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         Log.d(TAG, "All data passed through");
         FoodItem f = new FoodItem();
         if (iteIndex > 0)
-            for(int d = 0; d <= iteIndex; d++)
+            for(int d = 0; d < iteIndex; d++)
             {
-                if (itePrc.get(d) != null && iteQty.get(d) != null){
+                if (itePrc.get(d) != null && iteQty.get(d) != null && iteName.get(d) != null){
                     double iQt = Double.parseDouble(iteQty.get(d)), iPr = Double.parseDouble(itePrc.get(d));
                     f.setAmount(iQt);
                     f.setPrice(iPr);
-                }
-                if (iteName.get(d) != null)
                     f.setItemName(iteName.get(d));
-                db.addFood(f);
+                    db.addFood(f);
+                }
             }
         return text != null;
     }
 
+    /*This class breaks down the TextBlocks into a string, into individual words.*/
     private String[] textProcessor(TextBlock text){
         String preProcess = text.getValue();
-        String[] rVal = preProcess.split("\n");
-        return rVal;
+        String[] postProcess = preProcess.split(" ");
+        return postProcess;
     }
 
     private class CaptureGestureListener extends GestureDetector.SimpleOnGestureListener {
