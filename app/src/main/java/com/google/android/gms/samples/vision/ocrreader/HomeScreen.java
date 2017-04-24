@@ -120,6 +120,8 @@ public class HomeScreen extends AppCompatActivity {
     public void viewList(View view)
     {
         notifSent = false;
+        DatabaseHandler dbHandler = new DatabaseHandler(this);
+        dbHandler.recalcFoodAmounts();
         Intent intent = new Intent(this, ViewLoadPantry.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
@@ -129,6 +131,7 @@ public class HomeScreen extends AppCompatActivity {
 
     public void viewTrends(View view)
     {
+        checkTrendsNotifs();
         Intent intent = new Intent(this, ViewTrends.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
