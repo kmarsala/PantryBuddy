@@ -66,6 +66,9 @@
         <service
             android:name="com.google.android.gms.samples.vision.ocrreader.notifications.NotificationService"
             android:exported="false" />
+        <service
+            android:name="com.google.android.gms.samples.vision.ocrreader.MyTestService"
+            android:exported="false" />
 
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"

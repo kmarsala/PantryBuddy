@@ -32,6 +32,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -49,6 +50,7 @@ import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Activity for the multi-tracker app.  This app detects text and displays the value with the
@@ -195,12 +197,12 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         // to other detection examples to enable the text recognizer to detect small pieces of text.
         mCameraSource =
                 new CameraSource.Builder(getApplicationContext(), textRecognizer)
-                .setFacing(CameraSource.CAMERA_FACING_BACK)
-                .setRequestedPreviewSize(1280, 1024)
-                .setRequestedFps(2.0f)
-                .setFlashMode(useFlash ? Camera.Parameters.FLASH_MODE_TORCH : null)
-                .setFocusMode(autoFocus ? Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE : null)
-                .build();
+                        .setFacing(CameraSource.CAMERA_FACING_BACK)
+                        .setRequestedPreviewSize(1280, 1024)
+                        .setRequestedFps(2.0f)
+                        .setFlashMode(useFlash ? Camera.Parameters.FLASH_MODE_TORCH : null)
+                        .setFocusMode(autoFocus ? Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE : null)
+                        .build();
     }
 
     /**
@@ -312,6 +314,10 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         }
     }
 
+    public static boolean isNumeric(String str)
+    {
+        return str.matches("-?\\d+(\\.\\d+)?");  //match a number with optional '-' and decimal.
+    }
     /**
      * onTap is called to capture the first TextBlock under the tap location and return it to
      * the Initializing Activity.
@@ -322,23 +328,90 @@ public final class OcrCaptureActivity extends AppCompatActivity {
      */
     private boolean onTap(float rawX, float rawY) {
         OcrGraphic graphic = mGraphicOverlay.getGraphicAtLocation(rawX, rawY);
+        DatabaseHandler db = new DatabaseHandler(this);
+        ArrayList<String> iteName = new ArrayList<>(), itePrc = new ArrayList<>(), iteQty = new ArrayList<>();
+        int iteIndex = 0;
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
         TextBlock text = null;
-        if (graphic != null) {
-            text = graphic.getTextBlock();
-            if (text != null && text.getValue() != null) {
-                Intent data = new Intent();
-                data.putExtra(TextBlockObject, text.getValue());
-                setResult(CommonStatusCodes.SUCCESS, data);
-                finish();
-            }
-            else {
-                Log.d(TAG, "text data is null");
+        String[] tmp_new, tmp_old = null;
+        for (int h = 0; h< height; h+=40) {
+            for (int w = 0; w< width; w += 40){
+                graphic = mGraphicOverlay.getGraphicAtLocation(w,h);
+                //text.getValue returns a string of the block... no bueno.
+                if (graphic != null) {
+                    text = graphic.getTextBlock();
+                    if (text != null && text.getValue() != null) {
+                        tmp_new = textProcessor(text);
+                        if(!(tmp_old == tmp_new)) {
+                            if(isNumeric(tmp_new[0])){
+                                for(int v = 0; v < tmp_new.length; v++) {
+                                    String tst = tmp_new[v].substring(0, 4);
+                                    itePrc.add(tst);
+                                }
+                            }
+                            else{
+                                for(int v = 0; v < tmp_new.length; v++) {
+                                    if (!(tmp_new[v].toLowerCase().contains("saved")))
+                                        if (!(tmp_new[v].toLowerCase().contains("promotion"))) {
+                                            iteName.add(tmp_new[v]);
+                                            iteQty.add("1");
+                                            iteIndex++;
+                                        }
+                                        else if (tmp_new[v].contains("@"))
+                                            if (tmp_new[v].contains("lbs")){
+                                                char[] s = tmp_new[v].toCharArray();
+                                                String s2 = "";
+                                                for(int x = 0; x < 5; x++)
+                                                    s2 = s2 + s[x];
+                                                iteQty.remove(iteIndex-1);
+                                                iteQty.add(s2);
+                                            }
+                                            else{
+                                                char c = tmp_new[v].charAt(0);
+                                                iteQty.remove(iteIndex-1);
+                                                iteQty.add(Character.toString(c));
+                                            }
+                                }
+
+                            }
+                            tmp_old = tmp_new;
+                        }
+                        Intent data = new Intent();
+                        data.putExtra(TextBlockObject, text.getValue());
+                        setResult(CommonStatusCodes.SUCCESS, data);
+                        finish();
+                    } else {
+                        Log.d(TAG, "Processing... (Null data point)");
+                    }
+                } else {
+                    Log.d(TAG, "Processing... (No text Detected)");
+                }
             }
         }
-        else {
-            Log.d(TAG,"no text detected");
-        }
+        Log.d(TAG, "All data passed through");
+        FoodItem f = new FoodItem();
+        if (iteIndex > 0)
+            for(int d = 0; d <= iteIndex; d++)
+            {
+                if (itePrc.get(d) != null && iteQty.get(d) != null){
+                    double iQt = Double.parseDouble(iteQty.get(d)), iPr = Double.parseDouble(itePrc.get(d));
+                    f.setAmount(iQt);
+                    f.setPrice(iPr);
+                }
+                if (iteName.get(d) != null)
+                    f.setItemName(iteName.get(d));
+                db.addFood(f);
+            }
         return text != null;
+    }
+
+    private String[] textProcessor(TextBlock text){
+        String preProcess = text.getValue();
+        String[] rVal = preProcess.split("\n");
+        return rVal;
     }
 
     private class CaptureGestureListener extends GestureDetector.SimpleOnGestureListener {

@@ -89,7 +89,7 @@ public final class R {
 		public static final int adjust_height = 0x7f0e0036;
 		public static final int adjust_width = 0x7f0e0037;
 		public static final int auto = 0x7f0e0021;
-		public static final int button = 0x7f0e0083;
+		public static final int button = 0x7f0e0085;
 		public static final int center = 0x7f0e0023;
 		public static final int dark = 0x7f0e0040;
 		public static final int icon_only = 0x7f0e003d;

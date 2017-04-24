@@ -1,10 +1,13 @@
 package com.google.android.gms.samples.vision.ocrreader;
 
 
+import android.app.IntentService;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -20,10 +23,28 @@ import java.util.TimerTask;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
+
+
 public class HomeScreen extends AppCompatActivity {
 
 
-    Timer updater = new Timer();
+    private boolean notifSent = false;
+
+    private Handler handler = new Handler();
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            System.out.println("Handler run");
+      /* do what you need to do */
+            checkTrendsNotifs();
+      /* and here comes the "trick" */
+           handler.postDelayed(this, 100000);//(86400000/8)/4);
+
+        }
+    };
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +52,11 @@ public class HomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        handler.postDelayed(runnable, 100);
 
-      //  updater.schedule();
+
     }
+
 
 
     @Override
@@ -42,14 +65,23 @@ public class HomeScreen extends AppCompatActivity {
         super.onResume();
         DatabaseHandler dbHandler = new DatabaseHandler(this);
         System.out.println("on resume");
-        dbHandler.recalcFoodAmounts();
-
-       if( dbHandler.checkAmountsAndSendNotification() )
-       {
-           addNotification();
-       }
-
+        //dbHandler.recalcFoodAmounts();
     }
+
+    public void checkTrendsNotifs()
+    {
+        System.out.println("checking stuff");
+        DatabaseHandler dbHandler = new DatabaseHandler(this);
+        dbHandler.recalcFoodAmounts();
+        if( dbHandler.checkAmountsAndSendNotification() )
+        {
+            if(!notifSent) {
+                notifSent = true;
+                addNotification();
+            }
+        }
+    }
+
 
     /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -77,15 +109,18 @@ public class HomeScreen extends AppCompatActivity {
 
     public void inputList(View view)
     {
+        notifSent = false;
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
+
     }
 
     public void viewList(View view)
     {
+        notifSent = false;
         Intent intent = new Intent(this, ViewLoadPantry.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();

@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:2:1-70:12
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:2:1-74:12
 	package
 		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:3:5-62
 		INJECTED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml
@@ -156,7 +156,7 @@ ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main
 	android:name
 		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:12:22-78
 application
-ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:14:5-68:19
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:14:5-72:19
 MERGED from [com.android.support:support-v4:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\AndroidManifest.xml:25:5-20
@@ -360,6 +360,12 @@ ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main
 		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:66:13-37
 	android:name
 		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:65:13-62
+service#com.google.android.gms.samples.vision.ocrreader.MyTestService
+ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:68:9-70:39
+	android:exported
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:70:13-37
+	android:name
+		ADDED from C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\src\main\AndroidManifest.xml:69:13-42
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\MatthewBrown\Documents\SeniorProject\ocr-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:20:9-22:45
 	android:exported

@@ -14,7 +14,7 @@
     tools:showIn="@layout/activity_home_screen">
 
     <Button
-        android:text="Add To List"
+        android:text="Add/Remove From Pantry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -53,7 +53,7 @@
         android:layout_alignEnd="@+id/button_reciept" />
 
     <Button
-        android:text="Scan A Receipt"
+        android:text="Scan A Receipt (Beta)"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_reciept"

@@ -150,7 +150,12 @@ public class DisplayMessageActivity extends AppCompatActivity {
     {
         DatabaseHandler dbHandler = new DatabaseHandler(this);
         dbHandler.recalcFoodAmounts();
+    }
 
+    public void deleteEmptyItems(View v)
+    {
+        DatabaseHandler dbHandler = new DatabaseHandler(this);
+        dbHandler.deleteEmpty();
     }
 
 

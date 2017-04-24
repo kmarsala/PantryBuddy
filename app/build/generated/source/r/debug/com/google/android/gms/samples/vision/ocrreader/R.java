@@ -2740,9 +2740,9 @@ containing a value of this type.
         public static final int auto_focus=0x7f0e008b;
         public static final int beginning=0x7f0e0034;
         public static final int bottom=0x7f0e0022;
-        public static final int button=0x7f0e0083;
+        public static final int button=0x7f0e0085;
         public static final int buttonPanel=0x7f0e004e;
-        public static final int button_dev_test=0x7f0e0085;
+        public static final int button_dev_test=0x7f0e0084;
         public static final int button_inputList=0x7f0e0093;
         public static final int button_load=0x7f0e009a;
         public static final int button_reciept=0x7f0e0096;
@@ -2801,7 +2801,7 @@ containing a value of this type.
         public static final int item3=0x7f0e007b;
         public static final int item4=0x7f0e007e;
         public static final int item_touch_helper_previous_elevation=0x7f0e0005;
-        public static final int labelText=0x7f0e0084;
+        public static final int labelText=0x7f0e0083;
         public static final int left=0x7f0e0028;
         public static final int light=0x7f0e0041;
         public static final int line1=0x7f0e00aa;

@@ -65,6 +65,10 @@
             android:name=".notifications.NotificationService"
             android:exported="false"/>
 
+        <service
+            android:name=".MyTestService"
+            android:exported="false"/>
+
     </application>
 
 </manifest>

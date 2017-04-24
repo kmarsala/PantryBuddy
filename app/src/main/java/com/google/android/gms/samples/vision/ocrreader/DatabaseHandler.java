@@ -9,6 +9,7 @@ import android.provider.Settings;
 
 import com.google.android.gms.samples.vision.ocrreader.notifications.NotificationService;
 
+import java.sql.Array;
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -387,6 +388,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         //Loop through all foods in the DB. If: amount  - (usagePerDay*2) < 2, send notification to user
     }
 
+    public void deleteEmpty()
+    {
+        ArrayList<FoodItem> foodList = getAllFoods();
+        for(int i = 0; i < foodList.size(); i++)
+        {
+            if(foodList.get(i).getAmount() == 0)  //If there is less than 2 days worth of food
+            {
+              deleteContact(foodList.get(i));
+            }
+        }
+    }
 
 
 
