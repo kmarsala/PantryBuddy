@@ -367,10 +367,35 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
     }
 
+    public boolean checkForExpired() {
+        System.out.println("checking for expired");
+
+        ArrayList<FoodItem> foodList = getAllFoods();
+        for(int i = 0; i < foodList.size(); i++)
+        {
+            long currMills = System.currentTimeMillis();
+            double dayselapsed = (currMills - foodList.get(i).getNewMillis()) / 86400000;
+            if(foodList.get(i).getAmount() > 0 &&  (dayselapsed > 10 )) //If there is less than 2 days worth of food
+            {
+                System.out.println("Current millis:" + currMills);
+                System.out.println("new millis: " + foodList.get(i).getNewMillis());
+                System.out.println("calc number:" + (currMills - foodList.get(i).getNewMillis()));
+              //  double dayselapsed = (currMills - foodList.get(i).getNewMillis()) / 86400000;
+                System.out.println("Days elapsed:" + dayselapsed);
+                //Send notification
+                System.out.println("Notification expired sending now");
+                //notif.notifyMe(true, "low food");
+                return true;
+            }
+        }
+        return false;
+
+    }
+
     public boolean checkAmountsAndSendNotification()
     {
         System.out.println("checking amounts");
-        NotificationService notif = new NotificationService();
+        //NotificationService notif = new NotificationService();
         ArrayList<FoodItem> foodList = getAllFoods();
         for(int i = 0; i < foodList.size(); i++)
         {
@@ -399,6 +424,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             }
         }
     }
+
 
 
 

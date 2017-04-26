@@ -38,7 +38,7 @@ public class HomeScreen extends AppCompatActivity {
       /* do what you need to do */
             checkTrendsNotifs();
       /* and here comes the "trick" */
-           handler.postDelayed(this, 100000);//(86400000/8)/4);
+           handler.postDelayed(this, 100000/2);//(86400000/8)/4);
 
         }
     };
@@ -52,14 +52,14 @@ public class HomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        handler.postDelayed(runnable, 100);
+        handler.postDelayed(runnable, 10000);
 
 
     }
 
 
 
-    @Override
+  /*  @Override
     protected void onResume()
     {
         super.onResume();
@@ -67,18 +67,26 @@ public class HomeScreen extends AppCompatActivity {
         System.out.println("on resume");
         //dbHandler.recalcFoodAmounts();
     }
-
+*/
     public void checkTrendsNotifs()
     {
         System.out.println("checking stuff");
         DatabaseHandler dbHandler = new DatabaseHandler(this);
         dbHandler.recalcFoodAmounts();
-        if( dbHandler.checkAmountsAndSendNotification() )
+
+     if( dbHandler.checkAmountsAndSendNotification() )
         {
+            /*
             if(!notifSent) {
                 notifSent = true;
                 addNotification();
             }
+            */
+            addNotification();
+        }
+       else if (dbHandler.checkForExpired())
+        {
+            addNotificationExpired();
         }
     }
 
@@ -107,10 +115,18 @@ public class HomeScreen extends AppCompatActivity {
 
 
 
+
     public void inputList(View view)
     {
         notifSent = false;
         Intent intent = new Intent(this, DisplayMessageActivity.class);
+        Bundle b = new Bundle();
+        b.putString("predefined1", "Pork Chops");
+        b.putString("predefined2", "Beef");
+        b.putString("predefined3", "Apples");
+        b.putString("predefined4", "Corn");
+        b.putInt("key",1);
+        intent.putExtras(b);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
@@ -131,7 +147,7 @@ public class HomeScreen extends AppCompatActivity {
 
     public void viewTrends(View view)
     {
-        checkTrendsNotifs();
+       // checkTrendsNotifs();
         Intent intent = new Intent(this, ViewTrends.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
@@ -168,10 +184,29 @@ public class HomeScreen extends AppCompatActivity {
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(contentIntent);
+        builder.setAutoCancel(true);
 
         // Add as notification
         NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(0, builder.build());
     }
+
+    private void addNotificationExpired() {
+        NotificationCompat.Builder builder =
+                new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.drawable.ic_notifications_black_24dp)
+                        .setContentTitle("Pantry Buddy Short Date Alert")
+                        .setContentText("Some items you bought a while back may be expired!");
+
+        Intent notificationIntent = new Intent(this, ViewLoadPantry.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(contentIntent);
+        builder.setAutoCancel(true);
+        // Add as notification
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.notify(0, builder.build());
+    }
+
 }
 

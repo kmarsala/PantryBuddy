@@ -16,16 +16,16 @@
         "source": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_view_load_pantry.xml",
-        "source": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\src\\main\\res\\layout\\activity_view_load_pantry.xml"
+        "merged": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
         "merged": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
         "source": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+        "merged": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_view_load_pantry.xml",
+        "source": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\src\\main\\res\\layout\\activity_view_load_pantry.xml"
     },
     {
         "merged": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
@@ -40,12 +40,12 @@
         "source": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
-        "source": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\layout\\design_layout_snackbar_include.xml"
-    },
-    {
         "merged": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_fruit2.xml",
         "source": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\src\\main\\res\\layout\\list_fruit2.xml"
+    },
+    {
+        "merged": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
         "merged": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
@@ -204,12 +204,12 @@
         "source": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
-        "merged": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
-        "source": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_action_bar_title_item.xml"
-    },
-    {
         "merged": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
         "source": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
         "merged": "C:\\Users\\MatthewBrown\\Documents\\SeniorProject\\ocr-reader\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_fruit.xml",

@@ -40,6 +40,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
     EditText price3;
     EditText price4;
     TextView label;
+    String predefinedText1, predefinedText2, predefinedText3, predefinedText4;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -49,6 +50,26 @@ public class DisplayMessageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        Bundle b = getIntent().getExtras();
+        int val = b.getInt("key");
+        System.out.println(val);
+
+        if(b.getString("predefined1") != null)
+        {
+            predefinedText1 = b.getString("predefined1");
+        }
+        if(b.getString("predefined2") != null)
+        {
+            predefinedText2 = b.getString("predefined2");
+        }
+        if(b.getString("predefined3") != null)
+        {
+            predefinedText3 = b.getString("predefined3");
+        }
+        if(b.getString("predefined4") != null)
+        {
+            predefinedText4 = b.getString("predefined4");
+        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_message);
@@ -70,6 +91,25 @@ public class DisplayMessageActivity extends AppCompatActivity {
         price3= (EditText) findViewById(R.id.price3);
         price4 = (EditText) findViewById(R.id.price4);
         label = (TextView) findViewById(R.id.labelText);
+
+        if(predefinedText1 != null)
+        {
+            name1.setText(predefinedText1);
+        }
+        if(predefinedText2 != null)
+        {
+            name2.setText(predefinedText2);
+        }
+
+        if(predefinedText3 != null)
+        {
+            name3.setText(predefinedText3);
+        }
+
+        if(predefinedText4 != null)
+        {
+            name4.setText(predefinedText4);
+        }
 
 
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display_message);
