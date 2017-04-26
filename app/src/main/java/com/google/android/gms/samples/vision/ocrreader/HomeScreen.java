@@ -19,6 +19,9 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.support.v4.app.NotificationCompat;
 import android.app.PendingIntent;
+
+import com.google.android.gms.samples.vision.ocrreader.notifications.NotificationService;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -29,6 +32,7 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 public class HomeScreen extends AppCompatActivity {
 
 
+    NotificationService gpsAlerter = new NotificationService();
     private boolean canSendNotif = true;
 
     private Handler handler = new Handler();
@@ -44,11 +48,10 @@ public class HomeScreen extends AppCompatActivity {
         }
     };
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //gpsAlerter.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

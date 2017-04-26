@@ -162,7 +162,7 @@ public class NotificationService extends Service implements LocationListener {
 
             Notification.Builder builder = new Notification.Builder(context)
                     .setContentTitle("Grocery store nearby!")
-                    .setContentText("You are running low on some grocery items!")
+                    .setContentText("Check Pantry Buddy!")
                     .setContentIntent(pendingIntent)
                     .setDefaults(Notification.DEFAULT_SOUND)
                     .setAutoCancel(true)
