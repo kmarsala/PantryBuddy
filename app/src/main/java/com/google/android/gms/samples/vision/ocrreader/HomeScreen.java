@@ -5,6 +5,7 @@ import android.app.IntentService;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -28,13 +29,13 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 public class HomeScreen extends AppCompatActivity {
 
 
-    private boolean notifSent = false;
+    private boolean canSendNotif = true;
 
     private Handler handler = new Handler();
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
-            System.out.println("Handler run");
+           // System.out.println("Handler run");
       /* do what you need to do */
             checkTrendsNotifs();
       /* and here comes the "trick" */
@@ -52,7 +53,7 @@ public class HomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        handler.postDelayed(runnable, 10000);
+        handler.postDelayed(runnable, 100000/2);
 
 
     }
@@ -76,13 +77,12 @@ public class HomeScreen extends AppCompatActivity {
 
      if( dbHandler.checkAmountsAndSendNotification() )
         {
-            /*
-            if(!notifSent) {
-                notifSent = true;
+
+            if(canSendNotif) {
+                canSendNotif = false;
                 addNotification();
             }
-            */
-            addNotification();
+
         }
        else if (dbHandler.checkForExpired())
         {
@@ -118,14 +118,15 @@ public class HomeScreen extends AppCompatActivity {
 
     public void inputList(View view)
     {
-        notifSent = false;
+        canSendNotif = true;
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         Bundle b = new Bundle();
         b.putString("predefined1", "Pork Chops");
         b.putString("predefined2", "Beef");
         b.putString("predefined3", "Apples");
         b.putString("predefined4", "Corn");
-        b.putInt("key",1);
+        b.putInt("qty1", 1);
+        b.putInt("qty2",1);
         intent.putExtras(b);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
@@ -135,7 +136,7 @@ public class HomeScreen extends AppCompatActivity {
 
     public void viewList(View view)
     {
-        notifSent = false;
+        canSendNotif = true;
         DatabaseHandler dbHandler = new DatabaseHandler(this);
         dbHandler.recalcFoodAmounts();
         Intent intent = new Intent(this, ViewLoadPantry.class);
@@ -206,6 +207,13 @@ public class HomeScreen extends AppCompatActivity {
         // Add as notification
         NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(0, builder.build());
+    }
+
+    public void onTutorialClick(View view)
+    {
+        Uri uri = Uri.parse("http://www.google.com");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
     }
 
 }

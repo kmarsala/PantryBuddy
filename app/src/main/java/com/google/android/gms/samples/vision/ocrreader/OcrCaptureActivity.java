@@ -38,6 +38,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -51,6 +52,8 @@ import com.google.android.gms.vision.text.TextRecognizer;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 /**
  * Activity for the multi-tracker app.  This app detects text and displays the value with the
@@ -329,7 +332,61 @@ public final class OcrCaptureActivity extends AppCompatActivity {
      * @param rawY - the raw position of the tap.
      * @return true if the activity is ending.
      */
+
+    /**
+     * onTap is called to speak the tapped TextBlock, if any, out loud.
+     *
+     * @param rawX - the raw position of the tap
+     * @param rawY - the raw position of the tap.
+     * @return true if the tap was on a TextBlock
+     */
     private boolean onTap(float rawX, float rawY) {
+        OcrGraphic graphic = mGraphicOverlay.getGraphicAtLocation(rawX, rawY);
+        TextBlock text = null;
+        if (graphic != null) {
+            text = graphic.getTextBlock();
+            if (text != null && text.getValue() != null) {
+                Log.d(TAG, "text data read!");
+                ArrayList<String> sendStr = new ArrayList<>();
+                String[] sVal = textProcessor(text);
+                for (int j = 0; j < sVal.length; j++)
+                    if (lineChecker(sVal[j]))
+                        sendStr.add(sVal[j]);
+                //Intent intent = new Intent(this, DisplayMessageActivity.class);
+                Bundle b = new Bundle();
+                if(sendStr.size()>= 1)
+                    b.putString("predefined1", sendStr.get(0));
+                if(sendStr.size()>= 2)
+                    b.putString("predefined2", sendStr.get(1));
+                if(sendStr.size()>= 3)
+                    b.putString("predefined3", sendStr.get(2));
+                if(sendStr.size()>= 4)
+                    b.putString("predefined4", sendStr.get(3));
+                String sman = "";
+                for (int i = 0; i < sendStr.size(); i++)
+                    sman = sman + sendStr.get(i);
+                Intent data = new Intent();
+                data.putExtra(TextBlockObject, sman);
+                setResult(CommonStatusCodes.SUCCESS, data);
+                finish();
+                Intent intent = new Intent(this, DisplayMessageActivity.class);
+                intent.putExtras(b);
+                /*
+                EditText editText = (EditText) findViewById(R.id.edit_message);
+                String message = editText.getText().toString();
+                intent.putExtra(EXTRA_MESSAGE, message);*/
+                startActivity(intent);
+            }
+            else {
+                Log.d(TAG, "text data is null");
+            }
+        }
+        else {
+            Log.d(TAG,"no text detected");
+        }
+        return text != null;
+    }
+    /*private boolean onTap(float rawX, float rawY) {
         OcrGraphic graphic;
         DatabaseHandler db = new DatabaseHandler(this);
         ArrayList<String> iteName = new ArrayList<>(), itePrc = new ArrayList<>(), iteQty = new ArrayList<>();
@@ -403,10 +460,10 @@ public final class OcrCaptureActivity extends AppCompatActivity {
                 }
             }
         }
-		/*Intent data = new Intent();
+		Intent data = new Intent();
         data.putExtra(TextBlockObject, text.getValue());
         setResult(CommonStatusCodes.SUCCESS, data);
-        finish();*/
+        finish();
         Log.d(TAG, "All data passed through");
         FoodItem f = new FoodItem();
         if (iteIndex > 0)
@@ -422,7 +479,7 @@ public final class OcrCaptureActivity extends AppCompatActivity {
                 db.addFood(f);
             }
         return text != null;
-    }
+    }*/
 
     private String[] textProcessor(TextBlock text){
         String preProcess = text.getValue();
@@ -436,6 +493,16 @@ public final class OcrCaptureActivity extends AppCompatActivity {
 		rVal = tmp_holder.toArray(new String[tmp_holder.size()]);
         return rVal;*/
         return postProcess;
+    }
+
+    private boolean lineChecker(String toCheck)
+    {
+        boolean rVal = true;
+        String[] invalid_str = {"promotion","save","lb","you","@"};
+        for(int i = 0; i < invalid_str.length; i++)
+            if(toCheck.equalsIgnoreCase(invalid_str[i]) || isNumeric(toCheck.substring(0,4)))
+                rVal = false;
+        return rVal;
     }
 
     private class CaptureGestureListener extends GestureDetector.SimpleOnGestureListener {

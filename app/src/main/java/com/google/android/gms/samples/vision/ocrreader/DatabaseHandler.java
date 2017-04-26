@@ -9,6 +9,8 @@ import android.provider.Settings;
 
 import com.google.android.gms.samples.vision.ocrreader.notifications.NotificationService;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.sql.Array;
 import java.sql.Date;
 import java.text.DateFormat;
@@ -26,7 +28,7 @@ import android.support.v4.app.NotificationCompat;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
-    final int milliSecondsPerDay = 86400000;
+    long milliSecondsPerDay = 86400000;
 
     // All Static variables
     // Database Version
@@ -77,11 +79,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     //Your sanity will be lost. You will curse my name for writing such awful code.\
     //Apologies in advance to anyone who decides to edit this in the future.
     public void addFood(FoodItem foodItem) {
-        long milliSecondsCurrent = System.currentTimeMillis();
-
+       // long milliSecondsCurrent = System.currentTimeMillis();
+       long milliSecondsCurrent = System.currentTimeMillis();
         Calendar c = Calendar.getInstance();
         Date d = new Date(c.getTimeInMillis());
         SimpleDateFormat sdf = new SimpleDateFormat(("MM-dd-yyyy"));
+
         ContentValues values = new ContentValues();
         if(itemIsInDatabase(foodItem.getItemName())) //Old item
         {
@@ -96,12 +99,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             //This stuff below will change
             //values.put(KEY_FOOD_NAME, foodItem.getItemName()); // Food Name
             double previousQuantity = tempFood.getAmount();
+
             long oldMilliseconds = tempFood.getNewMillis();
-            double daysSincePurchase = (System.currentTimeMillis() - oldMilliseconds) / milliSecondsPerDay;
+            double daysSincePurchase = (milliSecondsCurrent - oldMilliseconds) / milliSecondsPerDay;
             double usagePerDay = foodItem.getAmount() / daysSincePurchase;
+            System.out.println("Current millis: " + milliSecondsCurrent);
+            System.out.println(milliSecondsPerDay);
+            System.out.println("Magic number: " + (milliSecondsCurrent - oldMilliseconds));
+            System.out.println("Magic number 2: " + (milliSecondsCurrent - oldMilliseconds) / milliSecondsPerDay);
             System.out.println("Days passed: " + daysSincePurchase);
             System.out.println("You're using: " + usagePerDay + " a day");
-            if(daysSincePurchase < 1) //If it has only been 1 day, don't calculate usage per day or else it becomes infinity.
+            if(daysSincePurchase < 1.0) //If it has only been 1 day, don't calculate usage per day or else it becomes infinity.
             {
                 values.put(KEY_FOOD_NAME,foodItem.getItemName());
                 values.put(KEY_QUANTITY, foodItem.getAmount() + previousQuantity);
@@ -348,9 +356,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 double weeklySpending = foodList.get(i).getWeeklySpending();
 
                 double daysSinceBought = (currentMillis - newMillis) / milliSecondsPerDay;
+                System.out.println("Days since bought: " + daysSinceBought);
                 double newAmount = (oldAmount - (usagePerDay * daysSinceBought));
                 if(newAmount <= 0)
                     newAmount = 0;
+
+                System.out.println("New amount: " + newAmount);
 
                 deleteContact(foodList.get(i));
 

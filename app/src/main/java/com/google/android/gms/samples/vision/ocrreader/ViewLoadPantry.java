@@ -23,12 +23,12 @@ public class ViewLoadPantry extends ListActivity {
 
     public void makeArray()
     {
-        System.out.println("makearray1");
+      //  System.out.println("makearray1");
         DatabaseHandler dbHandler = new DatabaseHandler(this);
-        System.out.println("makearray2");
+        //System.out.println("makearray2");
         foods = dbHandler.getAllFoods();
 
-        System.out.println("entering for loop");
+        //System.out.println("entering for loop");
         //Updates the days elapsed
        /* for(int i = 0; i < foods.size(); i++)
         {
@@ -40,7 +40,7 @@ public class ViewLoadPantry extends ListActivity {
         {
 
            System.out.println(foods.get(i).getItemName());
-            System.out.println("printing price");
+          //  System.out.println("printing price");
             System.out.println(foods.get(i).getPrice());
             String temp = foods.get(i).getItemName() + "/" + Double.valueOf(foods.get(i).getAmount()).toString() + " Remain / Bought on " + foods.get(i).getDatePurchased() + " / You Paid: $" + foods.get(i).getPrice();
             String[] newArray = new String[allFoods.length+1];
@@ -53,20 +53,20 @@ public class ViewLoadPantry extends ListActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-    System.out.println("wtf1");
+    //System.out.println("wtf1");
                 super.onCreate(savedInstanceState);
-    System.out.println("wtf2");
+    //System.out.println("wtf2");
         makeArray();
 
-        System.out.println("debug1");
+      //  System.out.println("debug1");
         // no more this
         // setContentView(R.layout.list_fruit);
 
         setListAdapter(new ArrayAdapter<String>(this, R.layout.list_fruit,allFoods));
-        System.out.println("debug2");
+        //System.out.println("debug2");
 
         ListView listView = getListView();
-        System.out.println("debug3");
+        //System.out.println("debug3");
 
         listView.setTextFilterEnabled(true);
         //System.out.println("debug4");
