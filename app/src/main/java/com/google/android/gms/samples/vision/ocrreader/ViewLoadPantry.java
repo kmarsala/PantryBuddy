@@ -14,6 +14,8 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
+//This class is to make the pantry list, and it is dynamic regardless of pantry size. Creates a scrolling view if needed.
+
 public class ViewLoadPantry extends ListActivity {
 
     ArrayList<FoodItem> foods;
@@ -21,21 +23,11 @@ public class ViewLoadPantry extends ListActivity {
     String[] allFoods = new String[0];
 
 
+    //This method is to automatically resize the array and refill it, because the scrollable list needs an array to work
     public void makeArray()
     {
-      //  System.out.println("makearray1");
         DatabaseHandler dbHandler = new DatabaseHandler(this);
-        //System.out.println("makearray2");
         foods = dbHandler.getAllFoods();
-
-        //System.out.println("entering for loop");
-        //Updates the days elapsed
-       /* for(int i = 0; i < foods.size(); i++)
-        {
-            dbHandler.updateItem(foods.get(i));
-        }
-*/
-        //allFoods[0] = "Item Name / Quantity / Date Purchased / Price Paid";
         for(int i = 0; i < foods.size(); i++)
         {
 
@@ -53,9 +45,7 @@ public class ViewLoadPantry extends ListActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-    //System.out.println("wtf1");
-                super.onCreate(savedInstanceState);
-    //System.out.println("wtf2");
+        super.onCreate(savedInstanceState);
         makeArray();
 
       //  System.out.println("debug1");

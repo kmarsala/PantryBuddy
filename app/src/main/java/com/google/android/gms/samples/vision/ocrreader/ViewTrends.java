@@ -13,6 +13,8 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import java.util.ArrayList;
 
+
+//This class is almost the same as the ViewLoadPantry class.
 public class ViewTrends extends ListActivity {
 
     ArrayList<FoodItem> foods;

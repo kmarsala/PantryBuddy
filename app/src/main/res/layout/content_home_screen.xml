@@ -27,15 +27,41 @@
         android:layout_alignParentEnd="true" />
 
     <Button
+        android:text="View Trends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_trends"
+        android:onClick="viewTrends"
+        android:layout_below="@+id/button_inputList"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="32dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Watch Tutorial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonTutorial"
+        android:onClick="onTutorialClick"
+        android:layout_marginBottom="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
         android:text="Settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_settings"
         android:onClick="viewSettings"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/button_viewList"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="112dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -45,23 +71,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/button_viewList"
         android:onClick = "viewList"
-        android:layout_above="@+id/button_settings"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/button_reciept"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="32dp"
-        android:layout_alignRight="@+id/button_reciept"
-        android:layout_alignEnd="@+id/button_reciept" />
-
-    <Button
-        android:text="View Trends"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_trends"
-        android:onClick="viewTrends"
-        android:layout_below="@+id/button_inputList"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="24dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -71,24 +84,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/button_reciept"
         android:onClick="scanReceipt"
+        android:layout_marginTop="32dp"
         android:layout_below="@+id/button_trends"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
-
-    <Button
-        android:text="Watch Tutorial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="43dp"
-        android:id="@+id/buttonTutorial"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="onTutorialClick" />
 
 </RelativeLayout>

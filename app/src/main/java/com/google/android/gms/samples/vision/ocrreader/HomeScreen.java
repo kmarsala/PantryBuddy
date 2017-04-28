@@ -34,16 +34,18 @@ public class HomeScreen extends AppCompatActivity {
 
     NotificationService gpsAlerter = new NotificationService();
     private boolean canSendNotif = true;
+    private boolean notificationsOn = false;
+
 
     private Handler handler = new Handler();
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
-           // System.out.println("Handler run");
       /* do what you need to do */
             checkTrendsNotifs();
       /* and here comes the "trick" */
-           handler.postDelayed(this, 100000/2);//(86400000/8)/4);
+        //Change this number for how often to check for notifications and trend calc
+           handler.postDelayed(this, 86400000/2); //Twice a day
 
         }
     };
@@ -51,36 +53,25 @@ public class HomeScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        //gpsAlerter.
+        //
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         handler.postDelayed(runnable, 100000/2);
-
-
     }
 
 
-
-  /*  @Override
-    protected void onResume()
-    {
-        super.onResume();
-        DatabaseHandler dbHandler = new DatabaseHandler(this);
-        System.out.println("on resume");
-        //dbHandler.recalcFoodAmounts();
-    }
-*/
     public void checkTrendsNotifs()
     {
-        System.out.println("checking stuff");
+      //  System.out.println("checking stuff");
         DatabaseHandler dbHandler = new DatabaseHandler(this);
         dbHandler.recalcFoodAmounts();
 
      if( dbHandler.checkAmountsAndSendNotification() )
         {
 
+            startNotificationService();
             if(canSendNotif) {
                 canSendNotif = false;
                 addNotification();
@@ -91,30 +82,12 @@ public class HomeScreen extends AppCompatActivity {
         {
             addNotificationExpired();
         }
-    }
 
-
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_home_screen, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if(!dbHandler.checkAmountsAndSendNotification())
+        {
+            stopNotificationService();
         }
-
-        return super.onOptionsItemSelected(item);
-    }*/
+    }
 
 
 
@@ -124,13 +97,6 @@ public class HomeScreen extends AppCompatActivity {
         canSendNotif = true;
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         Bundle b = new Bundle();
-        b.putString("predefined1", "Pork Chops");
-        b.putString("predefined2", "Beef");
-        b.putString("predefined3", "Apples");
-        b.putString("predefined4", "Corn");
-        b.putInt("qty1", 1);
-        b.putInt("qty2",1);
-        intent.putExtras(b);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
@@ -140,6 +106,7 @@ public class HomeScreen extends AppCompatActivity {
     public void viewList(View view)
     {
         canSendNotif = true;
+        checkTrendsNotifs();
         DatabaseHandler dbHandler = new DatabaseHandler(this);
         dbHandler.recalcFoodAmounts();
         Intent intent = new Intent(this, ViewLoadPantry.class);
@@ -151,7 +118,6 @@ public class HomeScreen extends AppCompatActivity {
 
     public void viewTrends(View view)
     {
-       // checkTrendsNotifs();
         Intent intent = new Intent(this, ViewTrends.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
@@ -214,9 +180,25 @@ public class HomeScreen extends AppCompatActivity {
 
     public void onTutorialClick(View view)
     {
-        Uri uri = Uri.parse("http://www.google.com");
+        Uri uri = Uri.parse("https://www.youtube.com/watch?v=XK-81BIMCYg");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
+    }
+
+    private void startNotificationService() {
+        if(!notificationsOn) {
+            startService(new Intent(this, NotificationService.class));
+            System.out.println("GPS Started");
+            notificationsOn = true;
+        }
+    }
+
+    private void stopNotificationService() {
+        if(notificationsOn) {
+            stopService(new Intent(this, NotificationService.class));
+            System.out.println("GPS stopped");
+            notificationsOn = false;
+        }
     }
 
 }

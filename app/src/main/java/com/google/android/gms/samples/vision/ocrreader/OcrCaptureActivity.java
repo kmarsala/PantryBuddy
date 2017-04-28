@@ -365,10 +365,10 @@ public final class OcrCaptureActivity extends AppCompatActivity {
                 String sman = "";
                 for (int i = 0; i < sendStr.size(); i++)
                     sman = sman + sendStr.get(i);
-                Intent data = new Intent();
+                /*Intent data = new Intent();
                 data.putExtra(TextBlockObject, sman);
                 setResult(CommonStatusCodes.SUCCESS, data);
-                finish();
+                finish();*/
                 Intent intent = new Intent(this, DisplayMessageActivity.class);
                 intent.putExtras(b);
                 /*
@@ -386,119 +386,19 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         }
         return text != null;
     }
-    /*private boolean onTap(float rawX, float rawY) {
-        OcrGraphic graphic;
-        DatabaseHandler db = new DatabaseHandler(this);
-        ArrayList<String> iteName = new ArrayList<>(), itePrc = new ArrayList<>(), iteQty = new ArrayList<>();
-        int iteIndex = 0;
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int height = displayMetrics.heightPixels;
-        int width = displayMetrics.widthPixels;
-        TextBlock text = null;
-        String[] tmp_new, tmp_old = null;
-        for (int h = 0; h< height; h+=20) {
-            for (int w = 0; w< width; w += 20){
-                graphic = mGraphicOverlay.getGraphicAtLocation(w,h);
-                //text.getValue returns a string of the block... no bueno.
-                if (graphic != null) {
-                    text = graphic.getTextBlock();
-                    if (text != null && text.getValue() != null) {
-                        tmp_new = textProcessor(text); //TODO: REWRITE BASED ON AN ARRAYLIST INSTEAD OF AN ARRAY OF STRINGS
-                        if(!(tmp_old == tmp_new)) {
-                            //checking to see if the first part of the string block is numeric, to add to the pricing.
-                            //TODO: LOOP THROUGH EACH TEXTBLOCK x2
-                            if(isNumeric(tmp_new[0].substring(0,4))){
-                                if(!tmp_old[0].toLowerCase().contains("promotion") && !tmp_old[0].toLowerCase().contains("saved"))
-                                    for (int v = 0; v < tmp_new.length; v++) {
-                                        if (tmp_new[v].contains("lbs")){
-                                            String s = tmp_new[v].substring(0,5);
-                                            iteQty.remove(iteIndex-1);
-                                            iteQty.add(iteIndex-1,s);
-                                        }
-                                        else if (tmp_new[v].contains("@")){
-                                            char c = tmp_new[v].charAt(0);
-                                            iteQty.remove(iteIndex-1);
-                                            iteQty.add(iteIndex-1,Character.toString(c));
-                                        }
-                                        else {
-                                            String tst = tmp_new[v].substring(0, 4);
-                                            itePrc.add(tst);
-                                        }
-                                    }
-                            }
-                            //if not numeric, check for weight.
-                            if(!isNumeric(tmp_new[0])){
-                                for(int v = 0; v < tmp_new.length; v++) {
-                                    if (!(tmp_new[v].toLowerCase().contains("saved")))
-                                        if (!(tmp_new[v].toLowerCase().contains("promotion"))) {
-                                            iteName.add(tmp_new[v]);
-                                            iteQty.add(iteIndex,"1");
-                                            iteIndex++;
-                                        }
-                                        else if (tmp_new[v].contains("@"))
-                                            if (tmp_new[v].contains("lbs")){
-                                                String s = tmp_new[v].substring(0,5);
-                                                iteQty.remove(iteIndex-1);
-                                                iteQty.add(iteIndex-1,s);
-                                            }
-                                            else{
-                                                char c = tmp_new[v].charAt(0);
-                                                iteQty.remove(iteIndex-1);
-                                                iteQty.add(iteIndex-1,Character.toString(c));
-                                            }
-                                }
 
-                            }
-                            tmp_old = tmp_new;
-                        }
-                    } else {
-                        Log.d(TAG, "Processing... (Null data point)");
-                    }
-                } else {
-                    Log.d(TAG, "Processing... (No text Detected)");
-                }
-            }
-        }
-		Intent data = new Intent();
-        data.putExtra(TextBlockObject, text.getValue());
-        setResult(CommonStatusCodes.SUCCESS, data);
-        finish();
-        Log.d(TAG, "All data passed through");
-        FoodItem f = new FoodItem();
-        if (iteIndex > 0)
-            for(int d = 0; d < iteIndex; d++)
-            {
-                if (itePrc.get(d) != null && iteQty.get(d) != null){
-                    double iQt = Double.parseDouble(iteQty.get(d)), iPr = Double.parseDouble(itePrc.get(d));
-                    f.setAmount(iQt);
-                    f.setPrice(iPr);
-                }
-                if (iteName.get(d) != null)
-                    f.setItemName(iteName.get(d));
-                db.addFood(f);
-            }
-        return text != null;
-    }*/
 
     private String[] textProcessor(TextBlock text){
         String preProcess = text.getValue();
         String[] postProcess = preProcess.split("\n"), tmp, rVal;
-        /*ArrayList<String> tmp_holder = new ArrayList<String>();
-        for (int i = 0; i<postProcess.length; i++){
-            tmp = postProcess[i].split(" ");
-            for (int j = 0; j<tmp.length; j++)
-                tmp_holder.add(tmp[j]);
-        }
-		rVal = tmp_holder.toArray(new String[tmp_holder.size()]);
-        return rVal;*/
+
         return postProcess;
     }
 
     private boolean lineChecker(String toCheck)
     {
         boolean rVal = true;
-        String[] invalid_str = {"promotion","save","lb","you","@"};
+        String[] invalid_str = {"promotion","total","save","lb","you","@"};
         for(int i = 0; i < invalid_str.length; i++)
             if(toCheck.equalsIgnoreCase(invalid_str[i]) || isNumeric(toCheck.substring(0,4)))
                 rVal = false;

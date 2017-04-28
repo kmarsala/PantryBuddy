@@ -27,6 +27,7 @@ import java.util.ArrayList;
 
 public class DisplayMessageActivity extends AppCompatActivity {
 
+
     EditText name1;
     EditText name2;
     EditText name3;
@@ -50,6 +51,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        //The bundle is used to accept the input from the receipt scanner
         Bundle b = getIntent().getExtras();
         int val = b.getInt("key");
         System.out.println(val);
@@ -78,6 +80,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
         TextView textView = new TextView(this);
         textView.setTextSize(40);
 
+        //Tell the objects what they are
         name1 = (EditText) findViewById(R.id.item1);
         name2 = (EditText) findViewById(R.id.item2);
         name3 = (EditText) findViewById(R.id.item3);
@@ -117,13 +120,15 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
     }
 
+    //Adds an entry to the database
     public void addLineToDB(EditText name, EditText number, EditText price)
     {
-        //TODO: Remove special characters. Probably use regex.
         DatabaseHandler dbHandler = new DatabaseHandler(this);
 
+        //Make sure the entry is valid
         if(!name.getText().toString().equals("") && !number.getText().toString().equals("") && !price.getText().toString().equals(""))
         {
+            //Apostophes break the database
             if(name.getText().toString().contains("'"))
             {
                 label.setText("Please remove the apostrophe from your item name");
@@ -133,8 +138,8 @@ public class DisplayMessageActivity extends AppCompatActivity {
                 FoodItem f1 = new FoodItem();
                 f1.setItemName(name.getText().toString());
                 f1.setAmount((Double.valueOf(number.getText().toString())));
-                System.out.println("Displaying price purchased");
-                System.out.println(Double.valueOf(price.getText().toString()));
+               // System.out.println("Displaying price purchased");
+                //System.out.println(Double.valueOf(price.getText().toString()));
                 f1.setPrice(Double.valueOf(price.getText().toString()));
                 //  f1.setDatePurchased();
                 dbHandler.addFood(f1);
@@ -176,16 +181,11 @@ public class DisplayMessageActivity extends AppCompatActivity {
     {
         DatabaseHandler dbHandler = new DatabaseHandler(this);
         dbHandler.deletePantryRows();
-        /*
-        ArrayList<FoodItem> foods = dbHandler.getAllFoods();
-        for(int i = 0; i < foods.size(); i++)
-        {
-            dbHandler.deleteContact(foods.get(i));
-        }
-        */
+
         label.setText("Pantry has been deleted");
     }
 
+    //Unused for now
     public void recalcValues(View v)
     {
         DatabaseHandler dbHandler = new DatabaseHandler(this);
